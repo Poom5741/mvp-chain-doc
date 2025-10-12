@@ -3,8 +3,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 
 const config: Config = {
-  title: 'YourChain Whitepaper',
-  url: 'https://yourchain.org',
+  title: 'MVP CHAIN Whitepapers',
+  url: 'https://mvpcha.in',
   baseUrl: '/',
   favicon: '/img/logo.svg',
   onBrokenLinks: 'throw',
@@ -19,6 +19,7 @@ const config: Config = {
           path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
+          include: ['index.mdx', 'token/**', 'chain/**'],
           remarkPlugins: [require('remark-math')],
           rehypePlugins: [require('rehype-katex')],
         },
@@ -30,8 +31,12 @@ const config: Config = {
     colorMode: { defaultMode: 'light' },
     prism: { theme: prismThemes.github },
     navbar: {
-      title: 'YourChain',
-      logo: { alt: 'YourChain', src: '/img/logo.svg' },
+      title: 'MVP CHAIN',
+      logo: { alt: 'MVP CHAIN', src: '/img/logo.svg' },
+      items: [
+        { to: '/token/cover', label: 'Token', position: 'left' },
+        { to: '/chain/cover', label: 'Chain', position: 'left' },
+      ],
     },
   },
 };

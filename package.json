@@ -6,24 +6,38 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "serve": "docusaurus serve build",
-    "lint:md": "markdownlint 'docs/**/*.mdx' --ignore node_modules",
-    "lint:prose": "vale docs/",
+    "lint:md": "markdownlint 'docs/{token,chain}/**/*.mdx' --ignore node_modules",
+    "lint:prose": "vale docs/token docs/chain",
     "format": "prettier -w 'docs/**/*.mdx'",
+    "fetch": "node scripts/fetch-data.js",
+    "generate": "node scripts/generate-docs.js",
+    "figures": "mmdc -i resource/diagrams/fig-arch.mmd -o static/figures/fig-arch.svg && mmdc -i resource/diagrams/fig-bridge.mmd -o static/figures/fig-bridge.svg",
+    "prebuild": "npm run fetch && npm run generate && npm run figures",
     "pdf": "make pdf",
-    "all": "npm run format && npm run lint:md && npm run lint:prose && npm run build && npm run pdf",
-    "migrate": "node scripts/migrate.mjs"
+    "all": "npm run fetch && npm run generate && npm run figures && npm run format && npm run lint:md && npm run lint:prose && npm run build && npm run pdf",
+    "migrate": "node scripts/migrate.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3",
     "@docusaurus/preset-classic": "^3",
     "@docusaurus/theme-mermaid": "^3",
+    "@mermaid-js/layout-elk": "^0.1.3",
+    "cheerio": "^1.0.0",
     "glob": "^10",
+    "js-sha3": "^0.9.0",
     "katex": "^0.16.9",
     "remark-math": "^6",
     "rehype-katex": "^7"
   },
   "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^10.9.1",
+    "puppeteer": "^24.1.1",
     "markdownlint-cli": "^0.40.0",
-    "prettier": "^3"
+    "prettier": "^3",
+    "@docusaurus/types": "^3.0.0",
+    "prism-react-renderer": "^2.0.0",
+    "tailwindcss": "^3.4.12",
+    "postcss": "^8.4.44",
+    "autoprefixer": "^10.4.20"
   }
 }

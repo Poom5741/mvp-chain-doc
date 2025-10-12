@@ -1,0 +1,35 @@
+# Network Specifications
+
+- Chain ID: **{{MVP_CHAIN_ID}}**
+- RPC: `{{MVP_RPC}}`
+- Explorer: `{{MVP_EXPLORER}}`
+- Native Currency: **MVP**
+- Bridge (L1→MVP CHAIN): ETH gas on L1, ~10 minutes
+- Compatibility: EVM (Solidity, Web3)
+- Current Status: **Mainnet**
+
+## Execution & Compatibility
+
+EVM‑compatible; supports Solidity toolchains and common libraries.
+
+## Sequencer & Finality Model
+
+Current: centralized sequencer with optimistic finality; failures may delay
+inclusion. Target: increased decentralization and fault‑tolerance. Fallback:
+transactions can be retried or routed via alternative gateways if provided.
+
+## Data Availability & Proofs
+
+Current DA: inherits from the parent rollup stack; settlement to L1 with
+optimistic assumptions. Planned: upgrades to DA and proof systems as released
+upstream.
+
+## Bridging
+
+Ethereum↔MVP CHAIN via bridge contracts; L1 fees in ETH; guidance ~10 minutes per
+direction subject to L1 congestion.
+
+## Performance Targets & Benchmarks
+
+Targets only; independently verify before quoting. Throughput and latency depend
+on upstream stack and sequencer parameters.

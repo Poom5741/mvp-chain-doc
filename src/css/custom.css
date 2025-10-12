@@ -1,5 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('katex/dist/katex.min.css');
 
 :root {
-  --ifm-color-primary: #2E86FF;
+  --ifm-color-primary: #111827; /* brand primary */
+  --ifm-link-color: #F59E0B;   /* accent */
+}
+
+/* Utility helpers for MDX blocks */
+.hero-gradient {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(245, 158, 11, 0.15), transparent 50%),
+              radial-gradient(1200px 600px at 90% 0%, rgba(17, 24, 39, 0.12), transparent 50%);
+}
+
+/* Global polish for MDX content */
+@layer base {
+  .theme-doc-markdown h1 {
+    @apply text-gray-900 dark:text-gray-100 tracking-tight animate-fade-in-up;
+  }
+  .theme-doc-markdown h2 {
+    @apply text-gray-900 dark:text-gray-100 border-l-4 border-accent pl-3 mt-8 mb-3 animate-fade-in-up;
+  }
+  .theme-doc-markdown h3 {
+    @apply text-gray-800 dark:text-gray-200 mt-6 mb-2;
+  }
+  .theme-doc-markdown p {
+    @apply text-gray-700 dark:text-gray-300 leading-relaxed;
+  }
+  .theme-doc-markdown a {
+    @apply text-[color:var(--ifm-link-color)] hover:underline;
+  }
+  .theme-doc-markdown code:not(pre code) {
+    @apply bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5 text-[0.95em];
+  }
+  .theme-doc-markdown table {
+    @apply w-full text-left border-collapse overflow-hidden rounded-lg;
+  }
+  .theme-doc-markdown thead {
+    @apply bg-gray-50 dark:bg-gray-900/40;
+  }
+  .theme-doc-markdown tbody tr:nth-child(odd) {
+    @apply bg-gray-50/40 dark:bg-gray-900/30;
+  }
+  /* Admonitions */
+  .theme-admonition,
+  .alert {
+    @apply border border-gray-200 dark:border-gray-800 rounded-lg shadow-sm;
+  }
 }

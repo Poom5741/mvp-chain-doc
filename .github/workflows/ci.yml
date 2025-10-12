@@ -31,7 +31,7 @@ jobs:
           sudo mv vale /usr/local/bin/vale
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-fund --no-audit
 
       - name: Format MDX
         run: npm run format
@@ -45,14 +45,16 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Generate PDF
+      - name: Generate PDFs
         run: make pdf
 
-      - name: Upload PDF artifact
+      - name: Upload PDF artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: whitepaper-pdf
-          path: dist/whitepaper.pdf
+          name: whitepapers
+          path: |
+            dist/mvp-token.pdf
+            dist/mvp-chain.pdf
 
       - name: Create release
         if: github.ref == 'refs/heads/main'
@@ -62,4 +64,6 @@ jobs:
           name: YourChain Whitepaper ${{ github.run_number }}
           draft: false
           prerelease: false
-          files: dist/whitepaper.pdf
+          files: |
+            dist/mvp-token.pdf
+            dist/mvp-chain.pdf

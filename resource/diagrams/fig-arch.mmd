@@ -1,0 +1,5 @@
+%% Settlement & Rollup Topology
+flowchart LR
+  L1[Ethereum L1] --> WC[WorldChain Rollup];
+  WC --> MVP[MVP CHAIN L3];
+  MVP -->|Bridge: MVP ERC20 from L1| Wallet[User Wallet];

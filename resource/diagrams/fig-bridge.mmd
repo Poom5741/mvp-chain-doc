@@ -1,0 +1,11 @@
+%% Bridge Flow L1→MVP CHAIN
+sequenceDiagram
+    participant U as User
+    participant L1 as Ethereum
+    participant B as Bridge
+    participant MVP as MVP CHAIN
+    U->>L1: Approve MVP
+    U->>B: Initiate bridge
+    B->>L1: Lock/escrow
+    B->>MVP: Mint/release
+    MVP->>U: Credit MVP (gas token)
