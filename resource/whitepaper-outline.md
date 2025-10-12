@@ -1,0 +1,80 @@
+# MVP Token (MVP) — Whitepaper Outline
+
+This outline organizes the whitepaper and references supporting data gathered in:
+- `mvp-chain/overview.md`
+- `mvp-token/token-data.md`
+- `mvp-token/mvp-swap-plan.md`
+
+Sources: https://mvpcha.in/ (network details); Project specification (tokenomics and swap).
+
+## 1. Abstract
+- Summary of MVP CHAIN and MVP token’s purpose as gas-only utility with fixed supply and a dedicated project swap.
+
+## 2. Introduction
+- Motivation: Utility token exchanges (points, vouchers, rewards) need secure, fast, cheap settlement.
+- Positioning: MVP CHAIN as a WorldChain L3 with Ethereum-security inheritance.
+
+## 3. Network Overview
+- Architecture: Optimistic Rollup, Fraud Proofs, Ethereum Settlement, Decentralized Sequencer, Data Availability.
+- Performance: up to 10,000 TPS, <1s block time, instant finality.
+- Costs: Low gas (e.g., ~0.01 Gwei observed; dynamic).
+- Specs: Chain ID 480001, RPC `https://rpc.mvpcha.in`, EVM compatible.
+- Reference: See `mvp-chain/overview.md`.
+
+## 4. MVP Token Overview
+- Role: Native gas token for MVP CHAIN.
+- Standard: ERC-20 on Ethereum Mainnet (Decimals: 18).
+- Availability: Ethereum Mainnet only (initial phase).
+- Contract: `0x88888888a98Cb1525A98c354F17EFc8d73EF07A6` (Etherscan link in token docs).
+- Reference: See `mvp-token/token-data.md`.
+
+## 5. Token Utility
+- Gas payments and network operations.
+- No staking, rewards, or governance utility.
+
+## 6. Token Economics
+- Total Supply: 100,000,000 MVP (fixed cap).
+- Emissions: None.
+- Burns: None planned.
+- Initial Mint: Minted to project treasury.
+- Allocations: Liquidity provisioning for swap and operational reserves; no additional allocations.
+
+## 7. Governance
+- Token does not encode governance rights.
+- Protocol governance (if any) is separate from token utility.
+
+## 8. Technical Design Details
+- Security assumptions (Optimistic Rollup, fraud proofs, settlement on Ethereum).
+- Sequencer design and data availability.
+- Cross-chain bridge design and trust model.
+
+## 9. Bridge and Interoperability
+- Current status: No bridge; MVP operates solely on Ethereum Mainnet.
+- Future: Consider bridge to MVP CHAIN; document trust assumptions and UX when available.
+
+## 10. MVP Swap (Project-owned)
+- Purpose: Provide direct purchase path for MVP.
+- Design: AMM-based DEX with core pairs (e.g., MVP/USDT).
+- Liquidity: Seeded from treasury; fees and routing specifics to be defined.
+- Deployment: Phase 1 on Ethereum Mainnet; Phase 2/3 consider MVP CHAIN.
+
+## 11. Ecosystem and Use Cases
+- Utility-token exchange scenarios (points, vouchers, rewards).
+- Integrations and developer experience.
+
+## 12. Roadmap
+- Near-term: Launch project swap, seed liquidity, finalize bridge UX.
+- Mid-term: Expand pairs, monitoring, tooling.
+
+## 13. Risk, Compliance, and Disclosures
+- Operational risks, bridge risks, protocol risks.
+- Market and liquidity risks for swap.
+- Regulatory and compliance considerations.
+- Dynamic metrics disclaimer (gas, blocks) and validation steps.
+
+## 14. References
+- Official site: https://mvpcha.in/
+- Explorer and developer docs (link as available).
+
+Notes
+- Project-defined sections reflect internal specifications and should be kept consistent with implementation details.

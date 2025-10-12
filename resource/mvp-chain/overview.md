@@ -1,0 +1,95 @@
+# MVP CHAIN — Technical and Network Overview
+
+Source: https://mvpcha.in/
+
+## Summary
+MVP CHAIN is a blockchain-powered utility token exchange that enables secure and efficient exchange of utility tokens (points, vouchers, rewards) using advanced blockchain technology. It is built as a Layer 3 (L3) on WorldChain Rollup, inheriting Ethereum’s security while providing enhanced performance and lower costs.
+
+Source: https://mvpcha.in/
+
+## Network Status and Monitoring
+- Network Active • Chain ID: `480001`
+- RPC Endpoint: `https://rpc.mvpcha.in`
+- Real-time node health and sync status are available (online status, response time, block number, gas price).
+- Network statistics: live data via HTTP, powered by Blockscout.
+- Auto-refresh every 5 seconds on the monitoring page.
+
+Note: Metrics like block number and gas price are dynamic and change continuously.
+
+Source: https://mvpcha.in/
+
+## Network Specifications
+- Network Type: Utility Token Transfer Chain
+- Native Currency: `MVP`
+- Chain ID: `480001`
+- RPC Endpoint: `https://rpc.mvpcha.in`
+- Block Explorer: Powered by Blockscout (link provided on the network site)
+- Compatibility: EVM Compatible, Solidity Support, Web3 Standard
+
+Source: https://mvpcha.in/
+
+## Architecture and Infrastructure
+- Built on WorldChain Rollup technology (Layer 3)
+- Security: Inherits Ethereum security guarantees
+- Consensus: Optimistic Rollup
+- Fraud Proofs: Supported
+- Settlement: Ethereum
+- Infrastructure: Decentralized Sequencer, Data Availability, Cross-chain Bridge
+
+Source: https://mvpcha.in/
+
+## Performance and Costs
+- Throughput: up to 10,000 TPS
+- Block Time: < 1 second
+- Finality: Instant finality
+- Gas Fees: Dramatically reduced compared to L1/L2; typical example values on site show very low gas (e.g., ~0.01 Gwei). Actual fees vary and should be verified live.
+
+Source: https://mvpcha.in/
+
+## MVP Token Information
+- Token: `MVP` (native gas token for MVP CHAIN)
+- Availability: ERC-20 on Ethereum Mainnet
+- Trading: MVP/USDT on Uniswap V4 (Lightning DEX)
+- Notes: The site references “USDT Contract” and “Trading Pair: MVP/USDT” without listing explicit contract addresses on the main page.
+
+Source: https://mvpcha.in/
+
+## Acquiring MVP Tokens (High-level Steps)
+1. Buy MVP on Uniswap V4
+   - Connect wallet to Ethereum Mainnet
+   - Prepare USDT for purchase
+   - Swap USDT for MVP on Uniswap V4 via the site’s link
+2. Bridge MVP to MVP CHAIN
+   - Open the Bridge via the site’s link
+   - Select source “Ethereum Mainnet” and destination “MVP CHAIN”
+   - Enter amount and confirm in wallet
+3. Wait and Check Balance
+   - Wait ~10 minutes after bridging
+   - Add MVP CHAIN network to wallet
+   - Switch to MVP CHAIN and check MVP balance
+
+Important details
+- Source Network: Ethereum Mainnet
+- Destination Network: MVP CHAIN
+- Bridge Time: Approximately 10 minutes
+- Gas Fee: Paid in ETH on Ethereum Mainnet
+- Trading Pair: MVP/USDT
+- Protocol: Uniswap V4
+
+Source: https://mvpcha.in/
+
+## Why Choose MVP CHAIN (from site)
+- Lightning Fast: Near-instant transaction finality with optimized L3 architecture
+- Enhanced Security: Inherits Ethereum-level security plus L3 protections
+- Scalable Infrastructure: Handles thousands of TPS without compromising decentralization or security
+- Cost Efficient: Reduced gas fees compared to L1/L2
+- Technical Excellence: Built on battle-tested rollup technology
+
+Source: https://mvpcha.in/
+
+## Notes for Whitepaper Preparation
+- All above information is extracted from the official MVP CHAIN website.
+- Some specifics (e.g., token supply, distribution, governance, staking, exact contract addresses) are not listed on the public overview page and will need confirmation from technical docs, explorer, or official announcements.
+- Always verify dynamic metrics (e.g., gas price, block numbers) and any external links (bridge, docs, explorer) at time of drafting.
+
+Source: https://mvpcha.in/
