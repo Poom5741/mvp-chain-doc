@@ -1,0 +1,1 @@
+This directory stores static figures (SVG/PNG) used by the docs and PDF.

@@ -1,0 +1,5 @@
+@import url('katex/dist/katex.min.css');
+
+:root {
+  --ifm-color-primary: #2E86FF;
+}

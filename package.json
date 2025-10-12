@@ -1,0 +1,29 @@
+{
+  "name": "yourchain-whitepaper",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve build",
+    "lint:md": "markdownlint 'docs/**/*.mdx' --ignore node_modules",
+    "lint:prose": "vale docs/",
+    "format": "prettier -w 'docs/**/*.mdx'",
+    "pdf": "make pdf",
+    "all": "npm run format && npm run lint:md && npm run lint:prose && npm run build && npm run pdf",
+    "migrate": "node scripts/migrate.mjs"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3",
+    "@docusaurus/preset-classic": "^3",
+    "@docusaurus/theme-mermaid": "^3",
+    "glob": "^10",
+    "katex": "^0.16.9",
+    "remark-math": "^6",
+    "rehype-katex": "^7"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.40.0",
+    "prettier": "^3"
+  }
+}

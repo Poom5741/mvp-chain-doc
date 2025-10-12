@@ -1,0 +1,58 @@
+name: Docs CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Format MDX
+        run: npm run format
+
+      - name: Lint Markdown
+        run: npm run lint:md
+
+      - name: Lint Prose
+        run: npm run lint:prose
+
+      - name: Build site
+        run: npm run build
+
+      - name: Generate PDF
+        run: make pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: whitepaper-pdf
+          path: dist/whitepaper.pdf
+
+      - name: Create release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: wp-v${{ github.run_number }}
+          name: YourChain Whitepaper ${{ github.run_number }}
+          draft: false
+          prerelease: false
+          files: dist/whitepaper.pdf

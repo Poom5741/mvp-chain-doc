@@ -1,0 +1,74 @@
+# MVP Native Token (MVP) — Whitepaper Data
+
+Source: https://mvpcha.in/ (network details). Project specifications below are user-provided.
+
+## Contract Address
+- Network: Ethereum Mainnet
+- Address: `0x88888888a98Cb1525A98c354F17EFc8d73EF07A6`
+- Explorer: https://etherscan.io/address/0x88888888a98cb1525a98c354f17efc8d73ef07a6
+
+Source: Etherscan.
+
+## Role and Utility
+
+- MVP is the native gas token for MVP CHAIN.
+- Primary utility: pay transaction fees on MVP CHAIN.
+- No additional tokenomics: users buy MVP and use it for gas only.
+
+Source: https://mvpcha.in/ (network role); Project specification (gas-only utility).
+
+## Token Properties
+
+- Token Standard: `ERC-20`
+- Decimals: `18`
+- Availability: Ethereum Mainnet only
+
+Source: https://mvpcha.in/
+
+## Fixed Supply and Tokenomics (Project-defined)
+
+- Total Supply: `100,000,000` MVP (fixed cap).
+- Emissions: None (no ongoing issuance).
+- Burn/Deflation: None planned.
+- Staking/Rewards: None.
+- Governance: Not coupled to the token (if governance exists, it is protocol-level and not driven by token utility).
+- Initial Mint and Holdings: Minted to project treasury; portions allocated to liquidity provisioning and operational reserves. No other allocations.
+
+Source: Project specification.
+
+## Acquisition
+
+Current network availability: Ethereum Mainnet only.
+
+1. Project Swap (planned)
+   - We will launch our own swap to enable direct purchase of MVP on Ethereum Mainnet.
+   - Liquidity seeded from treasury for core pairs (e.g., MVP/USDT).
+2. Uniswap V4 (existing per site)
+   - Connect wallet to Ethereum Mainnet
+   - Prepare USDT and swap for MVP on Uniswap V4 via site link
+
+Notes
+- Bridging or deployment on MVP CHAIN is planned for a future phase; currently, MVP operates solely on Ethereum Mainnet.
+
+Operational details (from site)
+
+- Trading Pair: `MVP/USDT`
+- Protocol: `Uniswap V4`
+- Gas Fee: Paid in ETH on Ethereum Mainnet
+
+Sources: https://mvpcha.in/ (Uniswap details); Project specification (own swap; mainnet-only).
+
+## Network Context Relevant to Token
+
+- Current network: Ethereum Mainnet
+- Explorer: https://etherscan.io/address/0x88888888a98cb1525a98c354f17efc8d73ef07a6
+
+Note: MVP CHAIN network details are tracked separately and are not yet active for the token.
+
+## Risk and Compliance Notes
+
+- As a gas-only utility token with fixed supply, economic risk is primarily market-driven (liquidity depth, swap price stability).
+- Bridge and L3 operational risks remain (sequencer, DA, cross-chain bridge assumptions).
+- No staking or governance reduces regulatory complexity but does not eliminate compliance requirements.
+
+Source: Project specification and general considerations.
