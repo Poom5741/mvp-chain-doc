@@ -1,5 +1,36 @@
-node_modules/
-build/
-dist/
+# OS
 .DS_Store
+Thumbs.db
+
+# Node/Docusaurus
+node_modules/
+.docusaurus/
+build/
+
+# Artifacts & caches
+dist/
+tmp/
+.cache/
+coverage/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env
 .env
+.env.local
+.env.*.local
+
+# Analysis snapshots (generated at build time)
+analysis/snapshot.json
+analysis/metrics.md
+
+# Generated figures (kept in CI/builds)
+static/figures/fig-*.svg
+
+# IDE
+.idea/
+.vscode/
+
