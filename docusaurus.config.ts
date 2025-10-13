@@ -29,8 +29,8 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    colorMode: { defaultMode: 'light' },
-    prism: { theme: prismThemes.github },
+    colorMode: { defaultMode: 'dark', respectPrefersColorScheme: true },
+    prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
     navbar: {
       title: 'MVP CHAIN',
       items: [

@@ -5,6 +5,7 @@
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",
+    "build:vercel": "docusaurus build",
     "serve": "docusaurus serve build",
     "lint:md": "markdownlint 'docs/{token,chain}/**/*.mdx' --ignore node_modules",
     "lint:prose": "vale docs/token docs/chain",
@@ -12,7 +13,7 @@
     "fetch": "node scripts/fetch-data.js",
     "generate": "node scripts/generate-docs.js",
     "figures": "mmdc -t neutral -c resource/diagrams/mermaid.config.json --backgroundColor transparent -i resource/diagrams/fig-arch.mmd -o static/figures/fig-arch.svg && mmdc -t neutral -c resource/diagrams/mermaid.config.json --backgroundColor transparent -i resource/diagrams/fig-bridge.mmd -o static/figures/fig-bridge.svg",
-    "prebuild": "npm run fetch && npm run generate && npm run figures",
+    "prepare:docs": "npm run fetch && npm run generate && npm run figures",
     "pdf": "make pdf",
     "all": "npm run fetch && npm run generate && npm run figures && npm run format && npm run lint:md && npm run lint:prose && npm run build && npm run pdf",
     "migrate": "node scripts/migrate.js"

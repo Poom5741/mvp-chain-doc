@@ -9,10 +9,25 @@
   --ifm-link-color: #F59E0B;   /* accent */
 }
 
+/* Dark theme core variables for strong contrast */
+html[data-theme='dark'] {
+  --ifm-background-color: #0b1020;
+  --ifm-font-color-base: #e5e7eb;
+  --ifm-navbar-background-color: #0b1020;
+  --ifm-navbar-link-color: #e5e7eb;
+  --ifm-color-primary: #F59E0B; /* keep accent readable on dark */
+  --ifm-code-background: #0f172a; /* slate-900-ish */
+  --ifm-toc-border-color: #1f2937;
+}
+
 /* Utility helpers for MDX blocks */
 .hero-gradient {
   background: radial-gradient(1200px 600px at 10% 10%, rgba(245, 158, 11, 0.15), transparent 50%),
               radial-gradient(1200px 600px at 90% 0%, rgba(17, 24, 39, 0.12), transparent 50%);
+}
+html[data-theme='dark'] .hero-gradient {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(245, 158, 11, 0.20), transparent 50%),
+              radial-gradient(1200px 600px at 90% 0%, rgba(15, 23, 42, 0.35), transparent 55%);
 }
 
 /* Global polish for MDX content */
@@ -33,7 +48,7 @@
     @apply text-[color:var(--ifm-link-color)] hover:underline;
   }
   .theme-doc-markdown code:not(pre code) {
-    @apply bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5 text-[0.95em];
+    @apply bg-gray-100 dark:bg-slate-800 rounded px-1 py-0.5 text-[0.95em];
   }
   .theme-doc-markdown table {
     @apply w-full text-left border-collapse overflow-hidden rounded-lg;
@@ -47,11 +62,16 @@
   /* Admonitions */
   .theme-admonition,
   .alert {
-    @apply border border-gray-200 dark:border-gray-800 rounded-lg shadow-sm;
+    @apply border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm;
   }
 }
 
 /* Mermaid diagrams container styling */
 .theme-doc-markdown .mermaid {
-  @apply bg-white/70 dark:bg-black/30 border border-gray-200 dark:border-gray-800 rounded-lg p-3;
+  @apply bg-white/70 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-3;
+}
+
+/* Improve code block contrast in dark mode */
+html[data-theme='dark'] pre code {
+  @apply bg-transparent text-gray-200;
 }
