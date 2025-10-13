@@ -7,7 +7,6 @@ const config: Config = {
   title: 'MVP CHAIN Whitepapers',
   url: siteUrl,
   baseUrl: '/',
-  favicon: '/img/logo.svg',
   onBrokenLinks: 'throw',
   markdown: { mermaid: true, hooks: { onBrokenMarkdownLinks: 'warn', onBrokenMarkdownImages: 'ignore' } },
   themes: ['@docusaurus/theme-mermaid'],

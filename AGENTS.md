@@ -2,7 +2,6 @@
 
 ## Project Structure & Module Organization
 - `docs/` — MDX content; page order via numeric prefixes (e.g., `docs/01-abstract.mdx`).
-- `static/figures/` — images referenced as `/figures/<file>`; `static/img/` holds site assets (logo).
 - `docusaurus.config.ts`, `sidebars.ts` — site configuration; `src/css/custom.css` for styling.
 - `citations/` — `library.bib`, `style.csl` used for PDF references.
 - `scripts/migrate.js` — migrates `source_docs/*.md` to `docs/*.mdx` (admonitions, images, anchors).
@@ -22,7 +21,6 @@
 - MDX with Docusaurus admonitions: `:::note|tip|warning|important` … `:::`.
 - Math via KaTeX: `$inline$`, `$$block$$` (remark-math/rehype-katex enabled).
 - Filenames: `NN-title.mdx` to control order; ensure unique headings and meaningful slugs.
-- Images: place in `static/figures/`; reference with absolute paths like `/figures/diagram.png` and include alt text.
 - Formatting: Prettier defaults; Markdownlint line length 120 (`.markdownlint.json`); keep 2-space indentation.
 
 ## Testing Guidelines
@@ -33,7 +31,7 @@
 ## Commit & Pull Request Guidelines
 - Commits: short, imperative subject (≤72 chars), e.g., "Add tokenomics draft"; include scope when helpful.
 - PRs: clear description, linked issues, notable changes, and screenshots/PDF diffs for visual updates.
-- Checklist: ran `npm run all`, no stray files in `build/` or `dist/`, images under `static/figures/`.
+- Checklist: ran `npm run all`, no stray files in `build/` or `dist/`.
 
 ## Security & Configuration Tips
 - Require Node ≥18, Pandoc ≥3.1, and a TeX engine (`xelatex`).

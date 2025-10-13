@@ -27,8 +27,7 @@ pnpm-debug.log*
 analysis/snapshot.json
 analysis/metrics.md
 
-# Generated figures (kept in CI/builds)
-static/figures/fig-*.svg
+# (Removed figures directory and image assets)
 
 # IDE
 .idea/
