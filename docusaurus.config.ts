@@ -33,7 +33,6 @@ const config: Config = {
     prism: { theme: prismThemes.github },
     navbar: {
       title: 'MVP CHAIN',
-      logo: { alt: 'MVP CHAIN', src: '/img/logo.svg' },
       items: [
         { to: '/token/cover', label: 'Token', position: 'left' },
         { to: '/chain/cover', label: 'Chain', position: 'left' },
