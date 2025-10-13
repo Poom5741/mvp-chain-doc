@@ -9,8 +9,7 @@ const config: Config = {
   baseUrl: '/',
   favicon: '/img/logo.svg',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  markdown: { mermaid: true },
+  markdown: { mermaid: true, hooks: { onBrokenMarkdownLinks: 'warn', onBrokenMarkdownImages: 'ignore' } },
   themes: ['@docusaurus/theme-mermaid'],
   presets: [
     [
@@ -29,8 +28,8 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    colorMode: { defaultMode: 'dark', respectPrefersColorScheme: true },
-    prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
+    colorMode: { defaultMode: 'light', respectPrefersColorScheme: false, disableSwitch: true },
+    prism: { theme: prismThemes.github },
     navbar: {
       title: 'MVP CHAIN',
       items: [
