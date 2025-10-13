@@ -1,9 +1,16 @@
-# Ecosystem & Developer Experience
+<!-- markdownlint-disable MD041 -->
+import { Section, AnimatedHeading, Callout, SpecList, SpecItem } from '@site/src/components/ui/Docs';
 
-- Toolchains: Solidity, Foundry, Hardhat; RPC at `{{MVP_RPC}}`, Chain ID `{{MVP_CHAIN_ID}}`.
-- Explorer: `{{MVP_EXPLORER}}`; verify contract metadata and events.
-- SDKs: Standard Web3/ethers libraries; no custom SDK required.
-- Faucets: None; mainnet only unless announced.
-- Docs Entry: [Docs]({{MVP_SITE_URL}})
-
-> Provide repos, tutorials, and sample deployments as they become available.
+<Section>
+  <AnimatedHeading as="h1">Ecosystem & Developer Experience</AnimatedHeading>
+  <SpecList>
+    <SpecItem label="Toolchains" value={<>Solidity, Foundry, Hardhat</>} />
+    <SpecItem label="RPC" value={<code>{{MVP_RPC}}</code>} />
+    <SpecItem label="Chain ID" value={<strong>{{MVP_CHAIN_ID}}</strong>} />
+    <SpecItem label="Explorer" value={<code>{{MVP_EXPLORER}}</code>} />
+    <SpecItem label="SDKs" value={<>Standard Web3/ethers; no custom SDK required</>} />
+    <SpecItem label="Faucets" value={<>None; mainnet only unless announced</>} />
+    <SpecItem label="Docs Entry" value={<a href={"{{MVP_SITE_URL}}"}>Docs</a>} />
+  </SpecList>
+  <Callout type="tip" className="mt-3">Provide repos, tutorials, and sample deployments as they become available.</Callout>
+</Section>

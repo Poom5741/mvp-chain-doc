@@ -38,6 +38,19 @@ const config: Config = {
         { to: '/chain/cover', label: 'Chain', position: 'left' },
       ],
     },
+    mermaid: {
+      theme: { light: 'neutral', dark: 'neutral' },
+      options: {
+        fontFamily:
+          'Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif',
+        themeVariables: {
+          primaryColor: '#F59E0B',
+          primaryTextColor: '#111827',
+          lineColor: '#374151',
+          background: 'transparent',
+        },
+      },
+    },
   },
 };
 

@@ -11,7 +11,7 @@
     "format": "prettier -w 'docs/**/*.mdx'",
     "fetch": "node scripts/fetch-data.js",
     "generate": "node scripts/generate-docs.js",
-    "figures": "mmdc -i resource/diagrams/fig-arch.mmd -o static/figures/fig-arch.svg && mmdc -i resource/diagrams/fig-bridge.mmd -o static/figures/fig-bridge.svg",
+    "figures": "mmdc -t neutral -c resource/diagrams/mermaid.config.json --backgroundColor transparent -i resource/diagrams/fig-arch.mmd -o static/figures/fig-arch.svg && mmdc -t neutral -c resource/diagrams/mermaid.config.json --backgroundColor transparent -i resource/diagrams/fig-bridge.mmd -o static/figures/fig-bridge.svg",
     "prebuild": "npm run fetch && npm run generate && npm run figures",
     "pdf": "make pdf",
     "all": "npm run fetch && npm run generate && npm run figures && npm run format && npm run lint:md && npm run lint:prose && npm run build && npm run pdf",

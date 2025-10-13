@@ -1,11 +1,16 @@
-# References
+<!-- markdownlint-disable MD041 -->
+import { Section, AnimatedHeading } from '@site/src/components/ui/Docs';
 
-1. Etherscan — Token Contract: [link]({{ETHERSCAN_URL}})
-2. MVP CHAIN — Website: [link]({{MVP_SITE_URL}})
+<Section>
+  <AnimatedHeading as="h1">References</AnimatedHeading>
 
-## Data Provenance
+  1. Etherscan — Token Contract: [link]({{ETHERSCAN_URL}})
+  2. MVP CHAIN — Website: [link]({{MVP_SITE_URL}})
 
-- Snapshot Time (UTC): {{DATE_UTC}}
-- Sources:
-  - [{{ETHERSCAN_URL}}]({{ETHERSCAN_URL}})
-  - [{{MVP_SITE_URL}}]({{MVP_SITE_URL}})
+  <AnimatedHeading as="h2" className="mt-6">Data Provenance</AnimatedHeading>
+  
+  - Snapshot Time (UTC): {{DATE_UTC}}
+  - Sources:
+    - [{{ETHERSCAN_URL}}]({{ETHERSCAN_URL}})
+    - [{{MVP_SITE_URL}}]({{MVP_SITE_URL}})
+</Section>

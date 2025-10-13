@@ -50,3 +50,8 @@
     @apply border border-gray-200 dark:border-gray-800 rounded-lg shadow-sm;
   }
 }
+
+/* Mermaid diagrams container styling */
+.theme-doc-markdown .mermaid {
+  @apply bg-white/70 dark:bg-black/30 border border-gray-200 dark:border-gray-800 rounded-lg p-3;
+}

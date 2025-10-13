@@ -1,22 +1,31 @@
-# System Context (Token ↔ MVP CHAIN)
+<!-- markdownlint-disable MD041 -->
+import { Section, AnimatedHeading, Lead, SpecList, SpecItem, Callout } from '@site/src/components/ui/Docs';
 
-MVP Token on Ethereum L1 is the canonical asset used on MVP CHAIN (L3)
-for gas and protocol accounting. Bridging mints an L3 representation
-redeemable to L1.
+<Section>
+  <AnimatedHeading as="h1">System Context (Token ↔ MVP CHAIN)</AnimatedHeading>
+  <Lead>
+    MVP Token on Ethereum L1 is the canonical asset used on MVP CHAIN (L3) for gas and protocol
+    accounting. Bridging mints an L3 representation redeemable to L1.
+  </Lead>
 
-## On-chain Specification
+  <AnimatedHeading as="h2" className="mt-6">On‑chain Specification</AnimatedHeading>
+  <SpecList>
+    <SpecItem label="Network" value={<>Ethereum Mainnet</>} />
+    <SpecItem label="Standard" value={<>ERC‑20</>} />
+    <SpecItem label="Contract (plain)" value={<code>{{TOKEN_ADDRESS_PLAIN}}</code>} />
+    <SpecItem label="Contract (EIP‑55)" value={<code>{{TOKEN_ADDRESS_EIP55}}</code>} />
+    <SpecItem label="Name / Symbol" value={<><strong>{{TOKEN_NAME}}</strong> / <strong>{{TOKEN_SYMBOL}}</strong></>} />
+    <SpecItem label="Decimals" value={<strong>{{TOKEN_DECIMALS}}</strong>} />
+    <SpecItem label="Verified Source" value={<strong>{{TOKEN_VERIFIED}}</strong>} />
+    <SpecItem label="Owner/Admin" value={<strong>{{TOKEN_OWNER}}</strong>} />
+    <SpecItem label="Upgradeability" value={<strong>{{TOKEN_UPGRADEABILITY}}</strong>} />
+    <SpecItem label="Pausable/Blacklist" value={<strong>{{TOKEN_PAUSABLE}}</strong>} />
+    <SpecItem label="Total Supply" value={<strong>{{TOKEN_TOTAL_SUPPLY}}</strong>} />
+    <SpecItem label="Holders / Transfers" value={<><strong>{{TOKEN_HOLDERS}}</strong> / <strong>{{TOKEN_TRANSFERS}}</strong></>} />
+    <SpecItem label="Last Queried" value={<strong>{{DATE_UTC}}</strong>} />
+  </SpecList>
 
-- Network: Ethereum Mainnet
-- Standard: ERC‑20
-- Contract (plain): `{{TOKEN_ADDRESS_PLAIN}}`
-- Contract (EIP‑55): `{{TOKEN_ADDRESS_EIP55}}`
-- Name: **{{TOKEN_NAME}}**; Symbol: **{{TOKEN_SYMBOL}}**; Decimals: **{{TOKEN_DECIMALS}}**
-- Verified Source: **{{TOKEN_VERIFIED}}**
-- Owner/Admin: **{{TOKEN_OWNER}}**
-- Upgradeability: **{{TOKEN_UPGRADEABILITY}}**
-- Pausable/Blacklist: **{{TOKEN_PAUSABLE}}**
-- Total Supply: **{{TOKEN_TOTAL_SUPPLY}}**
-- Holders: **{{TOKEN_HOLDERS}}**; Transfers: **{{TOKEN_TRANSFERS}}**
-- Last Queried: **{{DATE_UTC}}**
-
-> Data is fetched from Etherscan at build time and snapshotted; see Data Provenance.
+  <Callout type="note" className="mt-4">
+    Data is fetched from Etherscan at build time and snapshotted; see Data Provenance.
+  </Callout>
+</Section>

@@ -1,11 +1,16 @@
-# References
+<!-- markdownlint-disable MD041 -->
+import { Section, AnimatedHeading } from '@site/src/components/ui/Docs';
 
-1. MVP CHAIN — Website: [link]({{MVP_SITE_URL}})
-2. MVP CHAIN — Explorer: [link]({{MVP_EXPLORER}})
+<Section>
+  <AnimatedHeading as="h1">References</AnimatedHeading>
 
-## Data Provenance
+  1. MVP CHAIN — Website: [link]({{MVP_SITE_URL}})
+  2. MVP CHAIN — Explorer: [link]({{MVP_EXPLORER}})
 
-- Snapshot Time (UTC): {{DATE_UTC}}
-- Sources:
-  - [{{MVP_SITE_URL}}]({{MVP_SITE_URL}})
-  - [{{MVP_EXPLORER}}]({{MVP_EXPLORER}})
+  <AnimatedHeading as="h2" className="mt-6">Data Provenance</AnimatedHeading>
+  
+  - Snapshot Time (UTC): {{DATE_UTC}}
+  - Sources:
+    - [{{MVP_SITE_URL}}]({{MVP_SITE_URL}})
+    - [{{MVP_EXPLORER}}]({{MVP_EXPLORER}})
+</Section>
