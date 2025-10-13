@@ -2,9 +2,10 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 
+const siteUrl = process.env.SITE_URL || 'https://mvpcha.in';
 const config: Config = {
   title: 'MVP CHAIN Whitepapers',
-  url: 'https://mvpcha.in',
+  url: siteUrl,
   baseUrl: '/',
   favicon: '/img/logo.svg',
   onBrokenLinks: 'throw',
