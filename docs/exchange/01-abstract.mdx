@@ -1,0 +1,65 @@
+---
+sidebar_position: 2
+---
+
+import { Section, AnimatedHeading, Lead, Card, Divider, Callout, LangTabs, LangTabItem } from '@site/src/components/ui/Docs';
+
+<Section>
+  <AnimatedHeading as="h1">Executive Summary</AnimatedHeading>
+  <LangTabs>
+    <LangTabItem value="th">
+      <Lead>ตลาดซื้อขายเฉพาะ UT1 สำหรับการใช้งานจริงบน MVP Chain โดยใช้ MVP Token เป็น gas และสกุลกลางของระบบ.</Lead>
+      <div className="grid md:grid-cols-2 gap-3 mt-3">
+        <Card title="Vision">
+          <p>เป็น UT1 Marketplace อันดับหนึ่งของไทย เชื่อมโทเคนใช้งานกับเศรษฐกิจจริงด้วยความโปร่งใสและปลอดภัย.</p>
+        </Card>
+        <Card title="Mission">
+          <ul>
+            <li>สร้างโครงสร้างพื้นฐานสำหรับ UT1 (MVP Chain L3)</li>
+            <li>เปิดตลาดซื้อขาย UT1 (MVP Exchange)</li>
+            <li>เร่ง adoption ผ่าน Mobile Expo, Boat Festival, Caravan, Tourism & Lifestyle</li>
+          </ul>
+        </Card>
+        <Card title="Scope">
+          <ul>
+            <li>ตลาด Spot เท่านั้น</li>
+            <li>Orderbook + AMM Hybrid</li>
+            <li>คู่หลัก: UT1/MVP</li>
+          </ul>
+        </Card>
+        <Card title="Identity">
+          <p>World ID + Thai ID (tiered KYC) ลด Sybil และเพิ่มความปลอดภัย.</p>
+        </Card>
+      </div>
+      <Divider />
+      <Callout type="tip">เนื้อหาปรับให้อ่านง่ายขึ้น โดยคงความถูกต้องทางเทคนิคครบถ้วน</Callout>
+    </LangTabItem>
+    <LangTabItem value="en">
+      <Lead>A UT1-only marketplace on MVP Chain for real-world utility tokens; MVP Token serves as gas and the ecosystem’s medium.</Lead>
+      <div className="grid md:grid-cols-2 gap-3 mt-3">
+        <Card title="Vision">
+          <p>Thailand’s leading UT1 marketplace — connecting utility tokens to the real economy with transparency and safety.</p>
+        </Card>
+        <Card title="Mission">
+          <ul>
+            <li>Build UT1-first infrastructure (MVP Chain L3)</li>
+            <li>Launch an active UT1 market (MVP Exchange)</li>
+            <li>Drive adoption via Mobile Expo, Boat Festival, Caravan, Tourism & Lifestyle</li>
+          </ul>
+        </Card>
+        <Card title="Scope">
+          <ul>
+            <li>Spot-only</li>
+            <li>Orderbook + AMM hybrid</li>
+            <li>Base pair: UT1/MVP</li>
+          </ul>
+        </Card>
+        <Card title="Identity">
+          <p>World ID + Thai ID (tiered KYC) for reduced Sybil risk and safety.</p>
+        </Card>
+      </div>
+      <Divider />
+      <Callout type="tip">Edited for clarity and editorial polish while preserving technical accuracy.</Callout>
+    </LangTabItem>
+  </LangTabs>
+</Section>

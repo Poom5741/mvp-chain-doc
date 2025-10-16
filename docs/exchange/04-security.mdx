@@ -1,0 +1,61 @@
+---
+sidebar_position: 5
+---
+
+import { Section, AnimatedHeading, Lead, Card, Divider, Callout, LangTabs, LangTabItem } from '@site/src/components/ui/Docs';
+
+<Section>
+  <AnimatedHeading as="h1">Security & Risk Mitigation</AnimatedHeading>
+  <LangTabs>
+    <LangTabItem value="th">
+      <Lead>โครงสร้างความปลอดภัยและกรอบความเสี่ยงของระบบเน้นการตรวจสอบได้ การจัดการคีย์ที่รัดกุม ความเป็นส่วนตัว และการสื่อสารที่เหมาะสม.</Lead>
+      <div className="grid md:grid-cols-2 gap-3 mt-3">
+        <Card title="Security Controls">
+          <ul>
+            <li>Smart Contract Audit: ทุกสัญญาหลัก (Static/Runtime)</li>
+            <li>Key Management: Multi-sig, MPC/HSM, แบ่งแยกบทบาท</li>
+            <li>Monitoring: On-chain anomalies, Withdraw patterns, Fraud flags</li>
+            <li>Bug Bounty: เปิดรับนักวิจัย, SLA แก้ไขช่องโหว่</li>
+            <li>Privacy & Encryption: Data minimization, Encryption at-rest/in-transit, Access logging</li>
+          </ul>
+        </Card>
+        <Card title="Compliance & Risks">
+          <ul>
+            <li>ภาษาการสื่อสาร: หลีกเลี่ยงการบ่งชี้ผลตอบแทน/การลงทุน</li>
+            <li>Legal/Interpretation: ติดตามกฎหมายและแนวทางปฏิบัติ</li>
+            <li>Technology/Security: แผนตอบสนองต่อภัยคุกคามและช่องโหว่</li>
+            <li>Adoption & Liquidity: นโยบายสภาพคล่องและการยอมรับใช้งาน</li>
+            <li>Documentation: รายงาน Audit/ข้อกำหนด KYA/นโยบายข้อมูล</li>
+          </ul>
+        </Card>
+      </div>
+      <Divider />
+      <Callout type="important">ไม่มีการสัญญาผลตอบแทนทางการเงิน และป้องกันการสื่อสารเชิงการลงทุน</Callout>
+    </LangTabItem>
+    <LangTabItem value="en">
+      <Lead>The system’s security and risk framework centers on auditability, rigorous key management, privacy, and appropriate communication.</Lead>
+      <div className="grid md:grid-cols-2 gap-3 mt-3">
+        <Card title="Security Controls">
+          <ul>
+            <li>Smart Contract Audit: all core contracts (static/runtime)</li>
+            <li>Key Management: multi-sig; MPC/HSM; role segregation</li>
+            <li>Monitoring: on-chain anomalies; withdrawal patterns; fraud flags</li>
+            <li>Bug Bounty: open to researchers; SLA for vulnerability fixes</li>
+            <li>Privacy & Encryption: data minimization; encryption at rest/in transit; access logging</li>
+          </ul>
+        </Card>
+        <Card title="Compliance & Risks">
+          <ul>
+            <li>Language: avoid investment-like phrasing; no yield/return promises</li>
+            <li>Legal/Interpretation: monitor regulations and best practices</li>
+            <li>Technology/Security: plans for threat response and vulnerability management</li>
+            <li>Adoption & Liquidity: policies for liquidity and real usage adoption</li>
+            <li>Documentation: audits/KYA/data policy published</li>
+          </ul>
+        </Card>
+      </div>
+      <Divider />
+      <Callout type="important">No financial return/yield promises; avoid investment-like communication</Callout>
+    </LangTabItem>
+  </LangTabs>
+</Section>

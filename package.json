@@ -6,7 +6,7 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "build:vercel": "docusaurus build",
-    "serve": "docusaurus serve build",
+    "serve": "docusaurus serve",
     "lint:md": "markdownlint 'docs/{token,chain}/**/*.mdx' --ignore node_modules",
     "lint:prose": "vale docs/token docs/chain",
     "format": "prettier -w 'docs/**/*.mdx'",

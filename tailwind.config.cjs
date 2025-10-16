@@ -6,7 +6,7 @@ module.exports = {
     './docs/**/*.{md,mdx}',
     './templates/**/*.{md,mdx}',
   ],
-  darkMode: 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {

@@ -1,4 +1,7 @@
 import React, { useState, PropsWithChildren, useRef, useEffect } from "react";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 type HeadingProps = PropsWithChildren<{
   as?: "h1" | "h2" | "h3" | "h4";
@@ -30,7 +33,7 @@ export function Section({
 }: PropsWithChildren<{ className?: string }>) {
   return (
     <section
-      className={`rounded-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm bg-white/70 dark:bg-black/40 backdrop-blur hero-gradient ${className}`}
+      className={`rounded-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm bg-white/70 dark:bg-black/40 backdrop-blur ${className}`}
     >
       {children}
     </section>
@@ -72,6 +75,67 @@ export function Callout({
     >
       {children}
     </div>
+  );
+}
+
+export function Divider({ className = "" }: { className?: string }) {
+  return (
+    <hr className={`my-6 border-t border-gray-200 dark:border-gray-800 ${className}`} />
+  );
+}
+
+export function PageHeader({
+  title,
+  subtitle,
+  children,
+}: PropsWithChildren<{ title: string; subtitle?: string }>) {
+  return (
+    <div className="page-header">
+      <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-gray-100">
+        {title}
+      </h1>
+      {subtitle && (
+        <p className="mt-2 text-gray-600 dark:text-gray-300">{subtitle}</p>
+      )}
+      {children}
+    </div>
+  );
+}
+
+export function Card({
+  title,
+  className = "",
+  children,
+}: PropsWithChildren<{ title?: string; className?: string }>) {
+  return (
+    <div className={`rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-black/30 p-4 ${className}`}>
+      {title && (
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+          {title}
+        </h3>
+      )}
+      <div className="prose dark:prose-invert max-w-none">{children}</div>
+    </div>
+  );
+}
+
+export function Figure({
+  src,
+  alt,
+  caption,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  className?: string;
+}) {
+  return (
+    <figure className={`mdx-figure ${className}`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt} />
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
   );
 }
 
@@ -122,6 +186,25 @@ export function SpecList({ children }: PropsWithChildren) {
     </ul>
   );
 }
+
+export function LangTabs({ children }: PropsWithChildren) {
+  const { i18n } = useDocusaurusContext();
+  const current = i18n?.currentLocale === "en" ? "en" : "th";
+  return (
+    <Tabs
+      groupId="lang"
+      defaultValue={current}
+      values={[
+        { label: "ภาษาไทย", value: "th" },
+        { label: "English", value: "en" },
+      ]}
+    >
+      {children}
+    </Tabs>
+  );
+}
+
+export const LangTabItem = TabItem;
 
 function CopyButton({ getText }: { getText: () => string }) {
   const [copied, setCopied] = useState(false);

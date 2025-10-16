@@ -10,6 +10,14 @@ const config: Config = {
   onBrokenLinks: 'throw',
   markdown: { mermaid: true, hooks: { onBrokenMarkdownLinks: 'warn', onBrokenMarkdownImages: 'ignore' } },
   themes: ['@docusaurus/theme-mermaid'],
+  i18n: {
+    defaultLocale: 'th',
+    locales: ['th', 'en'],
+    localeConfigs: {
+      th: { label: 'ภาษาไทย' },
+      en: { label: 'English' },
+    },
+  },
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -18,7 +26,7 @@ const config: Config = {
           path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
-          include: ['index.mdx', 'token/**', 'chain/**'],
+          include: ['index.mdx', 'token/**', 'chain/**', 'exchange/**'],
           remarkPlugins: [require('remark-math')],
           rehypePlugins: [require('rehype-katex')],
         },
@@ -27,13 +35,15 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    colorMode: { defaultMode: 'light', respectPrefersColorScheme: false, disableSwitch: true },
+    colorMode: { defaultMode: 'light', respectPrefersColorScheme: false, disableSwitch: false },
     prism: { theme: prismThemes.github },
     navbar: {
       title: 'MVP CHAIN',
       items: [
-        { to: '/token/cover', label: 'Token', position: 'left' },
-        { to: '/chain/cover', label: 'Chain', position: 'left' },
+        { type: 'doc', docId: 'token/cover', label: 'Token', position: 'left' },
+        { type: 'doc', docId: 'chain/cover', label: 'Chain', position: 'left' },
+        { type: 'doc', docId: 'exchange/cover', label: 'Exchange', position: 'left' },
+        { type: 'localeDropdown', position: 'right' },
       ],
     },
     mermaid: {
