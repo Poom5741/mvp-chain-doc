@@ -1,9 +1,40 @@
-# Ecosystem & Developer Experience
+---
+sidebar_position: 26
+---
 
-- Toolchains: Solidity, Foundry, Hardhat; RPC at `https://rpc.mvpcha.in`, Chain ID `480001`.
-- Explorer: `https://exp.mvpcha.in/`; verify contract metadata and events.
-- SDKs: Standard Web3/ethers libraries; no custom SDK required.
-- Faucets: None; mainnet only unless announced.
-- Docs Entry: [Docs](https://mvpcha.in/)
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
 
-> Provide repos, tutorials, and sample deployments as they become available.
+<Section>
+  <AnimatedHeading as='h1'>Ecosystem</AnimatedHeading>
+  <Lead>
+    Growing network of applications and partners building on MVP Chain.
+  </Lead>
+  <div className='grid md:grid-cols-3 gap-3 mt-3'>
+    <Card title='DeFi'>
+      <p>
+        Decentralized exchange and lending protocols.
+      </p>
+    </Card>
+    <Card title='Real World Assets'>
+      <p>
+        Tokenization of real-world assets.
+      </p>
+    </Card>
+    <Card title='Gaming'>
+      <p>
+        Blockchain gaming and NFTs.
+      </p>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='tip'>
+    Join our ecosystem and build the future of decentralized finance.
+  </Callout>
+</Section>

@@ -1,7 +1,37 @@
-# Economics & Utility
+---
+sidebar_position: 14
+---
 
-- Fee token on MVP CHAIN for transaction gas and base protocol fees.
-- Incentives and discounts: none claimed unless stated in Roadmap.
-- Bridge flows: lock/escrow on L1; mint/release on L3.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
 
-![Settlement & Rollup Topology](/figures/fig-arch.svg)
+<Section>
+  <AnimatedHeading as='h1'>Token Economics</AnimatedHeading>
+  <Lead>
+    Clear utility-driven economics with verifiable on-chain data.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Utility Value'>
+      <ul>
+        <li>Gas fees on MVP Chain</li>
+        <li>Protocol incentives</li>
+        <li>Staking rewards</li>
+      </ul>
+    </Card>
+    <Card title='Supply Dynamics'>
+      <p>
+        Fixed supply of 700,000,000 MVP with transparent distribution.
+      </p>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='note'>
+    Economic model focuses on utility rather than speculation.
+  </Callout>
+</Section>

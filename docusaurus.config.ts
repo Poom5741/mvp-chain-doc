@@ -45,8 +45,8 @@ const config: Config = {
           label: 'Whitepapers',
           position: 'left',
           items: [
-            { to: '/token/00-cover', label: 'Token' },
-            { to: '/chain/00-cover', label: 'Chain' },
+            { to: '/token/token-cover', label: 'Token' },
+            { to: '/chain/chain-cover', label: 'Chain' },
           ],
         },
       ],
@@ -58,8 +58,8 @@ const config: Config = {
           title: 'Whitepapers',
           items: [
             { label: 'Exchange', to: '/exchange/cover' },
-            { label: 'Token', to: '/token/00-cover' },
-            { label: 'Chain', to: '/chain/00-cover' },
+            { label: 'Token', to: '/token/token-cover' },
+            { label: 'Chain', to: '/chain/chain-cover' },
           ],
         },
       ],

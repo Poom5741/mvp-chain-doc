@@ -1,5 +1,41 @@
-# Regulatory & Disclaimers
+---
+sidebar_position: 18
+---
 
-This document is informational and does not constitute an offer or solicitation.
-No price projections or returns are implied. Users must assess smart‑contract and
-bridge risk and comply with applicable laws in their jurisdiction.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
+
+<Section>
+  <AnimatedHeading as='h1'>Legal Disclaimer</AnimatedHeading>
+  <Lead>
+    Important legal considerations for token holders.
+  </Lead>
+  <div className='grid md:grid-cols-1 gap-3 mt-3'>
+    <Card title='Not Financial Advice'>
+      <p>
+        This whitepaper does not constitute financial advice, investment advice,
+        trading advice, or any other type of advice.
+      </p>
+    </Card>
+    <Card title='Risk Acknowledgment'>
+      <p>
+        Cryptocurrency investments involve high risk. You may lose your entire investment.
+      </p>
+    </Card>
+    <Card title='Regulatory Compliance'>
+      <p>
+        Token holders are responsible for compliance with their local regulations.
+      </p>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='warning'>
+    Consult with legal and financial professionals before making any investment decisions.
+  </Callout>
+</Section>

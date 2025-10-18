@@ -1,5 +1,39 @@
-# Governance & Upgrades
+---
+sidebar_position: 25
+---
 
-Upgrades track upstream rollup releases. Governance actions should use time‑locked
-processes with audits prior to activation. Roadmap items are labeled explicitly and
-do not imply delivery dates.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
+
+<Section>
+  <AnimatedHeading as='h1'>Governance</AnimatedHeading>
+  <Lead>
+    Community-driven governance model for protocol evolution.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Protocol Governance'>
+      <ul>
+        <li>MVP Token holders</li>
+        <li>On-chain voting</li>
+        <li>Time-locked execution</li>
+      </ul>
+    </Card>
+    <Card title='Scope'>
+      <ul>
+        <li>Parameter changes</li>
+        <li>Upgrade proposals</li>
+        <li>Treasury management</li>
+      </ul>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='note'>
+    Governance powers increase gradually as the ecosystem matures.
+  </Callout>
+</Section>

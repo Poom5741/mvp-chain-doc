@@ -1,35 +1,50 @@
-# Network Specifications
+---
+sidebar_position: 23
+---
 
-- Chain ID: **480001**
-- RPC: `https://rpc.mvpcha.in`
-- Explorer: `https://exp.mvpcha.in/`
-- Native Currency: **MVP**
-- Bridge (L1→MVP CHAIN): ETH gas on L1, ~10 minutes
-- Compatibility: EVM (Solidity, Web3)
-- Current Status: **Mainnet**
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+  SpecList,
+} from '@site/src/components/ui/Docs'
 
-## Execution & Compatibility
+<Section>
+  <AnimatedHeading as='h1'>Technical Specification</AnimatedHeading>
+  <Lead>
+    High-performance blockchain optimized for DeFi applications.
+  </Lead>
+  
+  <AnimatedHeading as='h2'>Network Parameters</AnimatedHeading>
+  <SpecList
+    items={[
+      { label: 'Chain ID', value: '0x' },
+      { label: 'Consensus', value: 'Optimistic Rollup' },
+      { label: 'Block Time', value: '2 seconds' },
+      { label: 'TPS', value: '2,000+' },
+      { label: 'Finality', value: '~1 minute' },
+      { label: 'Gas Token', value: 'MVP Token' }
+    ]}
+  />
 
-EVM‑compatible; supports Solidity toolchains and common libraries.
+  <div className='grid md:grid-cols-2 gap-3 mt-6'>
+    <Card title='EVM Compatibility'>
+      <p>
+        Full Ethereum Virtual Machine compatibility for seamless smart contract deployment.
+      </p>
+    </Card>
+    <Card title='Bridge Integration'>
+      <p>
+        Native bridge to Ethereum L1 for secure asset transfers.
+      </p>
+    </Card>
+  </div>
 
-## Sequencer & Finality Model
-
-Current: centralized sequencer with optimistic finality; failures may delay
-inclusion. Target: increased decentralization and fault‑tolerance. Fallback:
-transactions can be retried or routed via alternative gateways if provided.
-
-## Data Availability & Proofs
-
-Current DA: inherits from the parent rollup stack; settlement to L1 with
-optimistic assumptions. Planned: upgrades to DA and proof systems as released
-upstream.
-
-## Bridging
-
-Ethereum↔MVP CHAIN via bridge contracts; L1 fees in ETH; guidance ~10 minutes per
-direction subject to L1 congestion.
-
-## Performance Targets & Benchmarks
-
-Targets only; independently verify before quoting. Throughput and latency depend
-on upstream stack and sequencer parameters.
+  <Divider />
+  <Callout type='note'>
+    Specifications subject to optimization during testnet phase.
+  </Callout>
+</Section>

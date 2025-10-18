@@ -1,6 +1,39 @@
-# Introduction & Problem Statement
+---
+sidebar_position: 12
+---
 
-MVP CHAIN targets a high‑throughput L3 environment. A clear, audited fee token on L1
-reduces integration risk for wallets, exchanges, and bridges. This paper defines the
-MVP Token’s role and constraints without forward‑looking promises beyond a labeled
-roadmap.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
+
+<Section>
+  <AnimatedHeading as='h1'>Introduction & Problem Statement</AnimatedHeading>
+  <Lead>
+    MVP CHAIN targets a high‑throughput L3 environment requiring a clear, audited fee token.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Challenge'>
+      <p>
+        High-throughput L3 needs a reliable fee token on L1 to reduce integration risk for
+        wallets, exchanges, and bridges.
+      </p>
+    </Card>
+    <Card title='Solution'>
+      <ul>
+        <li>Clear fee token definition</li>
+        <li>Audited on-chain properties</li>
+        <li>Transparent constraints</li>
+        <li>No forward-looking promises beyond roadmap</li>
+      </ul>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='note'>
+    This paper defines the MVP Token's role and constraints without speculative promises.
+  </Callout>
+</Section>

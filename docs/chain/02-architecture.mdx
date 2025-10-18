@@ -1,7 +1,47 @@
-# Architecture Overview (L1 → WorldChain → MVP CHAIN)
+---
+sidebar_position: 22
+---
 
-MVP CHAIN settles to Ethereum L1 via WorldChain rollup tech. Sequencing and
-proof/settlement inherit L1 security assumptions with L3‑specific considerations
-documented herein.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+  Figure,
+} from '@site/src/components/ui/Docs'
 
-![Settlement & Rollup Topology](/figures/fig-arch.svg)
+<Section>
+  <AnimatedHeading as='h1'>Architecture</AnimatedHeading>
+  <Lead>
+    Layer 3 architecture leveraging Ethereum's security with optimized performance.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Layer Structure'>
+      <ul>
+        <li>L1: Ethereum (Settlement)</li>
+        <li>L2: World Chain (Data Availability)</li>
+        <li>L3: MVP Chain (Execution)</li>
+      </ul>
+    </Card>
+    <Card title='Key Components'>
+      <ul>
+        <li>Optimistic Rollups</li>
+        <li>Sequencer Network</li>
+        <li>Bridge Contracts</li>
+      </ul>
+    </Card>
+  </div>
+
+  <Figure
+    caption='MVP Chain Architecture Overview'
+    image='/figures/fig-arch.svg'
+    alt='Architecture diagram showing Layer 3 structure'
+  />
+
+  <Divider />
+  <Callout type='note'>
+    Architecture designed for maximum throughput while maintaining Ethereum-level security.
+  </Callout>
+</Section>

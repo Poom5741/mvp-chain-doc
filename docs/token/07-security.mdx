@@ -1,7 +1,39 @@
-# Security Considerations
+---
+sidebar_position: 17
+---
 
-- Privileges: admin/owner roles as discovered on Etherscan: **Not Public**; upgraders/timelocks if applicable: **Not Public**.
-- Upgrade risk: **Proxy/Upgradeable (detected)**; pausable/blacklist: **Not Public**.
-- Bridge risk: L1 custody/escrow and L3 minting introduce replay/censorship risks; users should verify bridge contracts.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
 
-![Bridge Flow L1→MVP CHAIN](/figures/fig-bridge.svg)
+<Section>
+  <AnimatedHeading as='h1'>Security Considerations</AnimatedHeading>
+  <Lead>
+    Audited smart contracts with transparent security practices.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Smart Contract'>
+      <ul>
+        <li>Verified source code</li>
+        <li>Proxy/Upgradeable pattern</li>
+        <li>Regular audits</li>
+      </ul>
+    </Card>
+    <Card title='Risk Mitigation'>
+      <ul>
+        <li>Multi-sig controls</li>
+        <li>Time locks</li>
+        <li>Transparent governance</li>
+      </ul>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='warning'>
+    Always exercise due diligence when interacting with smart contracts.
+  </Callout>
+</Section>

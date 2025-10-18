@@ -1,6 +1,39 @@
-# Abstract
+---
+sidebar_position: 11
+---
 
-The MVP Token is an ERC‑20 on Ethereum mainnet that powers the MVP CHAIN ecosystem
-as its native unit of account for gas and fees on L3, and for protocol incentives
-where applicable. This document states on‑chain properties, economics, distribution,
-and risk, prioritizing verifiable data over claims.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
+
+<Section>
+  <AnimatedHeading as='h1'>Abstract</AnimatedHeading>
+  <Lead>
+    The MVP Token is an ERC‑20 on Ethereum mainnet that powers the MVP CHAIN ecosystem
+    as its native unit of account for gas and fees on L3, and for protocol incentives.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Purpose'>
+      <p>
+        Native unit of account for gas and fees on MVP Chain L3, and protocol incentives.
+      </p>
+    </Card>
+    <Card title='Focus'>
+      <ul>
+        <li>On-chain properties</li>
+        <li>Token economics</li>
+        <li>Distribution mechanism</li>
+        <li>Risk assessment</li>
+      </ul>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='tip'>
+    This document prioritizes verifiable data over claims.
+  </Callout>
+</Section>

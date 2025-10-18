@@ -1,8 +1,36 @@
-# Market Microstructure
+---
+sidebar_position: 16
+---
 
-- Liquidity Sources: List known DEX/aggregators and L1 bridges (links only; no price commentary).
-- Routing: L1 → L3 via canonical/partner bridges; verify contract addresses.
-- Venues: Centralized listings if any (links only). Avoid forward-looking claims.
-- Monitoring: Prefer explorers and on-chain analytics; avoid unverifiable dashboards.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
 
-> Provide links to bridge/exchange docs and contract addresses. Do not include price or volume projections.
+<Section>
+  <AnimatedHeading as='h1'>Market Dynamics</AnimatedHeading>
+  <Lead>
+    Organic growth through utility adoption.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Primary Use Case'>
+      <p>
+        Gas and fees on MVP Chain L3.
+      </p>
+    </Card>
+    <Card title='Secondary Markets'>
+      <ul>
+        <li>DEX listings</li>
+        <li>Exchange integration</li>
+      </ul>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='note'>
+    Market value derives from utility within the ecosystem.
+  </Callout>
+</Section>

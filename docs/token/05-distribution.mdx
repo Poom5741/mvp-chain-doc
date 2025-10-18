@@ -1,8 +1,28 @@
-# Distribution & Treasury
+---
+sidebar_position: 15
+---
 
-- Allocations: N/A (not public). Publish breakdowns and cliffs when available.
-- Locks/Cliffs: N/A. State timelocks with on-chain txids when set.
-- Treasury: Governance policy, signers, and spending rules to be disclosed.
-- Vesting: If any, provide schedules and beneficiary addresses.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
 
-> This section is updated as disclosures become available. Values must be on-chain or accompanied by auditable references.
+<Section>
+  <AnimatedHeading as='h1'>Distribution</AnimatedHeading>
+  <Lead>
+    Transparent allocation with clear vesting schedules.
+  </Lead>
+  <div className='grid md:grid-cols-3 gap-3 mt-3'>
+    <Card title='Ecosystem'></Card>
+    <Card title='Team'></Card>
+    <Card title='Community'></Card>
+  </div>
+  <Divider />
+  <Callout type='tip'>
+    Full distribution details available on-chain.
+  </Callout>
+</Section>

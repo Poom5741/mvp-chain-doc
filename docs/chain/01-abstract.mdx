@@ -1,5 +1,38 @@
-# Abstract
+---
+sidebar_position: 21
+---
 
-MVP CHAIN is an L3 optimistic rollup built atop WorldChain‑style rollup infrastructure,
-targeting high throughput and EVM compatibility. We state current network specs,
-security and finality assumptions, and roadmap without marketing claims.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
+
+<Section>
+  <AnimatedHeading as='h1'>Abstract</AnimatedHeading>
+  <Lead>
+    MVP Chain is a Layer 3 solution designed for high-frequency trading and real-world utility.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Purpose'>
+      <p>
+        Provide scalable infrastructure for UT1 trading and MVP ecosystem applications.
+      </p>
+    </Card>
+    <Card title='Features'>
+      <ul>
+        <li>High throughput</li>
+        <li>Low latency</li>
+        <li>Low fees</li>
+        <li>EVM compatibility</li>
+      </ul>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='tip'>
+    Built on Ethereum with optimistic rollups for security.
+  </Callout>
+</Section>

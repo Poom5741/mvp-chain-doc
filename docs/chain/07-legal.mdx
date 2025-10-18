@@ -1,5 +1,40 @@
-# Compliance, Risk, and Disclaimers
+---
+sidebar_position: 27
+---
 
-This document is informational and not investment advice. No performance promises
-are made. Users must evaluate legal, regulatory, and operational risks in their
-jurisdiction.
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
+
+<Section>
+  <AnimatedHeading as='h1'>Legal Disclaimer</AnimatedHeading>
+  <Lead>
+    Important legal considerations for users and developers.
+  </Lead>
+  <div className='grid md:grid-cols-1 gap-3 mt-3'>
+    <Card title='No Warranty'>
+      <p>
+        The software is provided "as is", without warranty of any kind.
+      </p>
+    </Card>
+    <Card title='Risk Acknowledgment'>
+      <p>
+        Users assume all risks associated with using blockchain technology.
+      </p>
+    </Card>
+    <Card title='Compliance'>
+      <p>
+        Users are responsible for compliance with applicable laws and regulations.
+      </p>
+    </Card>
+  </div>
+  <Divider />
+  <Callout type='warning'>
+    Consult with legal professionals before using the network.
+  </Callout>
+</Section>
