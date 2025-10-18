@@ -2,106 +2,54 @@
 sidebar_position: 3
 ---
 
-import { Section, AnimatedHeading, Lead, Card, Divider, LangTabs, LangTabItem } from '@site/src/components/ui/Docs';
+import { Section, AnimatedHeading, Lead, Card, Divider } from '@site/src/components/ui/Docs';
 
 <Section>
   <AnimatedHeading as="h1">Technical Architecture</AnimatedHeading>
-  <LangTabs>
-    <LangTabItem value="th">
-      <Lead>ภาพรวมสถาปัตยกรรมของ MVP Ecosystem ครอบคลุม L3 (MVP Chain), มาตรฐานสัญญาอัจฉริยะ, กระเป๋าเงิน และตลาดซื้อขาย UT1-only — เน้นความปลอดภัย การปฏิบัติตามกฎ และ UX ที่ดี.</Lead>
-      <div className="grid md:grid-cols-2 gap-3 mt-3">
-        <Card title="MVP Chain (Layer 3)">
-          <ul>
-            <li>Rollup (Optimistic/ZK) รับความปลอดภัย/Finality จาก World Chain (L2) และ L1</li>
-            <li>EVM-compatible (Solidity/Foundry/Hardhat)</li>
-            <li>Data Availability ตามสถาปัตยกรรม Rollup</li>
-            <li>Sequencer ระยะแรก: รวมศูนย์ (Multi-sig + Failover); แผนเปิดในอนาคต</li>
-            <li>Bridge: World↔MVP พร้อมตรวจสอบธุรกรรมข้ามเชน</li>
-            <li>Guardrails: Rate limit, ป้องกัน spam/gas spike</li>
-            <li>Observability: Prometheus/Grafana/ELK, On-chain indexer</li>
-          </ul>
-        </Card>
-        <Card title="Smart Contracts & Standards">
-          <ul>
-            <li>UT1-20 (ERC-20 Profile): ระบุ ready-to-use/ไม่ใช่ MOP/ไม่มี Yield/ลิงก์ KYA</li>
-            <li>UT1-721 (NFT สิทธิ์/ตั๋ว): One-time use/Expiry/Transfer policy</li>
-            <li>KYC-Gated Contracts: ตรวจ World ID/Thai ID สำหรับสิทธิ์ที่กำหนด</li>
-            <li>Escrow/Redeem: รับประกันการใช้บริการจริง</li>
-            <li>Admin Controls: Role-based, Time-locked upgrade, Emergency Pause (Multi-sig)</li>
-          </ul>
-        </Card>
-        <Card title="MVP Wallet">
-          <ul>
-            <li>MPC + Biometric + 2FA (กู้คืนปลอดภัย/แบ่งส่วนคีย์)</li>
-            <li>Account Abstraction (ตัวเลือก): ช่วยจ่าย Gas/รวมธุรกรรมเพื่อ UX ที่ดี</li>
-            <li>World ID Integration: Login/KYC ลด Sybil</li>
-            <li>UX งานอีเวนต์: QR redeem/Offline queue/จุดบริการหน้างาน</li>
-            <li>Recovery: Guardians/OTP/สิทธิ์ช่วยกู้ตาม role</li>
-            <li>Privacy by Design: เก็บเท่าที่จำเป็น, PDPA compliant</li>
-          </ul>
-        </Card>
-        <Card title="MVP Exchange (UT1 Only)">
-          <ul>
-            <li>ตลาด Spot เท่านั้น (ไม่มีอนุพันธ์/เลเวอเรจ)</li>
-            <li>Matching: Orderbook + AMM Hybrid สำหรับสภาพคล่องเริ่มต้น</li>
-            <li>Base Pair: UT1/MVP (เพิ่มคู่ตามดีมานด์)</li>
-            <li>Listing Portal: KYA, Whitepaper UT1, Redemption Flow, SLA ผู้ออก</li>
-            <li>Legal & Tech Review: ตรวจไม่เป็น Investment/MOP/No-Yield + Audit report</li>
-            <li>Partner Dashboard: Analytics/Redemption/Churn/Cohort/Funnel</li>
-            <li>Identity: World ID + Thai ID (tiered KYC)</li>
-            <li>API/SDK: เชื่อม POS/เว็บพันธมิตร/E-commerce/Ticketing</li>
-          </ul>
-        </Card>
-      </div>
-      <Divider />
-    </LangTabItem>
-    <LangTabItem value="en">
-      <Lead>Architecture overview of the MVP ecosystem spanning L3 (MVP Chain), smart contract standards, the wallet, and the UT1-only exchange — focused on safety, compliance, and strong UX.</Lead>
-      <div className="grid md:grid-cols-2 gap-3 mt-3">
-        <Card title="MVP Chain (Layer 3)">
-          <ul>
-            <li>Rollup (Optimistic/ZK); inherits security/finality from World Chain (L2) and L1</li>
-            <li>EVM-compatible (Solidity/Foundry/Hardhat)</li>
-            <li>Data availability per rollup architecture</li>
-            <li>Sequencer (initial): centralized (multi-sig + failover); open up over time</li>
-            <li>Bridge: World ↔ MVP with cross-chain verification</li>
-            <li>Guardrails: rate limits; spam/gas-spike protection</li>
-            <li>Observability: Prometheus/Grafana/ELK; on-chain indexer</li>
-          </ul>
-        </Card>
-        <Card title="Smart Contracts & Standards">
-          <ul>
-            <li>UT1-20 (ERC-20 profile): ready-to-use, non-MOP, no yield, KYA link</li>
-            <li>UT1-721 (NFT rights/tickets): one-time use, expiry, transfer policy</li>
-            <li>KYC-Gated Contracts: verify World ID/Thai ID for gated rights</li>
-            <li>Escrow/Redeem: guarantee real service delivery</li>
-            <li>Admin controls: role-based, time-locked upgrades, emergency pause (multi-sig)</li>
-          </ul>
-        </Card>
-        <Card title="MVP Wallet">
-          <ul>
-            <li>MPC + biometrics + 2FA (secure recovery/key sharding)</li>
-            <li>Account Abstraction (optional): gas assistance; batched tx for UX</li>
-            <li>World ID integration: login/KYC; reduce Sybil</li>
-            <li>Event UX: QR redeem; offline queue; on-site service points</li>
-            <li>Recovery: guardians/OTP; role-based recovery rights</li>
-            <li>Privacy by Design: minimal data; PDPA compliant</li>
-          </ul>
-        </Card>
-        <Card title="MVP Exchange (UT1 Only)">
-          <ul>
-            <li>Spot-only (no derivatives/leverage)</li>
-            <li>Matching: orderbook + AMM hybrid for initial liquidity</li>
-            <li>Base Pair: UT1/MVP (add pairs per demand)</li>
-            <li>Listing Portal: KYA, UT1 whitepaper, redemption flows, issuer SLA</li>
-            <li>Legal & Tech Review: non-investment/MOP/no-yield; audit report</li>
-            <li>Partner Dashboard: analytics/redemption/churn/cohort/funnel</li>
-            <li>Identity: World ID + Thai ID (tiered KYC)</li>
-            <li>API/SDK: integrate POS/partner sites/e-commerce/ticketing</li>
-          </ul>
-        </Card>
-      </div>
-      <Divider />
-    </LangTabItem>
-  </LangTabs>
+  <Lead>Architecture overview of the MVP ecosystem spanning L3 (MVP Chain), smart contract standards, the wallet, and the UT1-only exchange — focused on safety, compliance, and strong UX.</Lead>
+  <div className="grid md:grid-cols-2 gap-3 mt-3">
+    <Card title="MVP Chain (Layer 3)">
+      <ul>
+        <li>Rollup (Optimistic/ZK); inherits security/finality from World Chain (L2) and L1</li>
+        <li>EVM-compatible (Solidity/Foundry/Hardhat)</li>
+        <li>Data availability per rollup architecture</li>
+        <li>Sequencer (initial): centralized (multi-sig + failover); open up over time</li>
+        <li>Bridge: World ↔ MVP with cross-chain verification</li>
+        <li>Guardrails: rate limits; spam/gas-spike protection</li>
+        <li>Observability: Prometheus/Grafana/ELK; on-chain indexer</li>
+      </ul>
+    </Card>
+    <Card title="Smart Contracts & Standards">
+      <ul>
+        <li>UT1-20 (ERC-20 profile): ready-to-use, non-MOP, no yield, KYA link</li>
+        <li>UT1-721 (NFT rights/tickets): one-time use, expiry, transfer policy</li>
+        <li>KYC-Gated Contracts: verify World ID/Thai ID for gated rights</li>
+        <li>Escrow/Redeem: guarantee real service delivery</li>
+        <li>Admin controls: role-based, time-locked upgrades, emergency pause (multi-sig)</li>
+      </ul>
+    </Card>
+    <Card title="MVP Wallet">
+      <ul>
+        <li>MPC + biometrics + 2FA (secure recovery/key sharding)</li>
+        <li>Account Abstraction (optional): gas assistance; batched tx for UX</li>
+        <li>World ID integration: login/KYC; reduce Sybil</li>
+        <li>Event UX: QR redeem; offline queue; on-site service points</li>
+        <li>Recovery: guardians/OTP; role-based recovery rights</li>
+        <li>Privacy by Design: minimal data; PDPA compliant</li>
+      </ul>
+    </Card>
+    <Card title="MVP Exchange (UT1 Only)">
+      <ul>
+        <li>Spot-only (no derivatives/leverage)</li>
+        <li>Matching: orderbook + AMM hybrid for initial liquidity</li>
+        <li>Base Pair: UT1/MVP (add pairs per demand)</li>
+        <li>Listing Portal: KYA, UT1 whitepaper, redemption flows, issuer SLA</li>
+        <li>Legal & Tech Review: non-investment/MOP/no-yield; audit report</li>
+        <li>Partner Dashboard: analytics/redemption/churn/cohort/funnel</li>
+        <li>Identity: World ID + Thai ID (tiered KYC)</li>
+        <li>API/SDK: integrate POS/partner sites/e-commerce/ticketing</li>
+      </ul>
+    </Card>
+  </div>
+  <Divider />
 </Section>

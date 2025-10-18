@@ -26,7 +26,7 @@ const config: Config = {
           path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
-          include: ['index.mdx', 'token/**', 'chain/**', 'exchange/**'],
+          include: ['index.mdx', 'exchange/**'],
           remarkPlugins: [require('remark-math')],
           rehypePlugins: [require('rehype-katex')],
         },
@@ -40,8 +40,6 @@ const config: Config = {
     navbar: {
       title: 'MVP CHAIN',
       items: [
-        { type: 'doc', docId: 'token/cover', label: 'Token', position: 'left' },
-        { type: 'doc', docId: 'chain/cover', label: 'Chain', position: 'left' },
         { type: 'doc', docId: 'exchange/cover', label: 'Exchange', position: 'left' },
         { type: 'localeDropdown', position: 'right' },
       ],

@@ -2,42 +2,22 @@
 sidebar_position: 4
 ---
 
-import { Section, AnimatedHeading, Lead, Card, Divider, SpecList, SpecItem, Callout, LangTabs, LangTabItem } from '@site/src/components/ui/Docs';
+import { Section, AnimatedHeading, Lead, Card, Divider, SpecList, SpecItem, Callout } from '@site/src/components/ui/Docs';
 
 <Section>
   <AnimatedHeading as="h1">Exchange Specification</AnimatedHeading>
-  <LangTabs>
-    <LangTabItem value="th">
-      <Lead>ข้อกำหนดหลักของตลาด UT1-only เพื่อรับรองความชัดเจนด้านกำกับดูแลและการใช้งานจริง พร้อมสมดุลระหว่างสภาพคล่องและความปลอดภัย.</Lead>
-      <Card title="Core Specs" className="mt-3">
-        <SpecList>
-          <SpecItem label="ชนิดตลาด" value={<>Spot เท่านั้น (ไม่มีอนุพันธ์/เลเวอเรจ)</>} />
-          <SpecItem label="การจับคู่คำสั่ง" value={<>Orderbook + AMM Hybrid</>} />
-          <SpecItem label="คู่ซื้อขายหลัก" value={<strong>UT1/MVP</strong>} />
-          <SpecItem label="Identity" value={<>World ID + Thai ID (tiered KYC)</>} />
-          <SpecItem label="Listing Portal" value={<>KYA, UT1 Whitepaper, Redemption Flow, Issuer SLA</>} />
-          <SpecItem label="Partner Dashboard" value={<>Analytics/Redemption/Churn/Cohort/Funnel</>} />
-          <SpecItem label="API/SDK" value={<>POS/E-commerce/Ticketing Integrations</>} />
-        </SpecList>
-      </Card>
-      <Divider />
-      <Callout type="tip">โฟกัส UT1-only เพื่อความชัดเจนด้านกำกับดูแลและการใช้งานจริง</Callout>
-    </LangTabItem>
-    <LangTabItem value="en">
-      <Lead>Core specifications of the UT1-only market, balancing liquidity with safety and clear compliance.</Lead>
-      <Card title="Core Specs" className="mt-3">
-        <SpecList>
-          <SpecItem label="Market Type" value={<>Spot only (no derivatives/leverage)</>} />
-          <SpecItem label="Matching" value={<>Orderbook + AMM hybrid</>} />
-          <SpecItem label="Base Pair" value={<strong>UT1/MVP</strong>} />
-          <SpecItem label="Identity" value={<>World ID + Thai ID (tiered KYC)</>} />
-          <SpecItem label="Listing Portal" value={<>KYA, UT1 whitepaper, redemption flows, issuer SLA</>} />
-          <SpecItem label="Partner Dashboard" value={<>Analytics/redemption/churn/cohort/funnel</>} />
-          <SpecItem label="API/SDK" value={<>Integrations for POS/e-commerce/ticketing</>} />
-        </SpecList>
-      </Card>
-      <Divider />
-      <Callout type="tip">UT1-only focus for clear compliance and real usage</Callout>
-    </LangTabItem>
-  </LangTabs>
+  <Lead>Core specifications of the UT1-only market, balancing liquidity with safety and clear compliance.</Lead>
+  <Card title="Core Specs" className="mt-3">
+    <SpecList>
+      <SpecItem label="Market Type" value={<>Spot only (no derivatives/leverage)</>} />
+      <SpecItem label="Matching" value={<>Orderbook + AMM hybrid</>} />
+      <SpecItem label="Base Pair" value={<strong>UT1/MVP</strong>} />
+      <SpecItem label="Identity" value={<>World ID + Thai ID (tiered KYC)</>} />
+      <SpecItem label="Listing Portal" value={<>KYA, UT1 whitepaper, redemption flows, issuer SLA</>} />
+      <SpecItem label="Partner Dashboard" value={<>Analytics/redemption/churn/cohort/funnel</>} />
+      <SpecItem label="API/SDK" value={<>Integrations for POS/e-commerce/ticketing</>} />
+    </SpecList>
+  </Card>
+  <Divider />
+  <Callout type="tip">UT1-only focus for clear compliance and real usage</Callout>
 </Section>

@@ -80,7 +80,9 @@ export function Callout({
 
 export function Divider({ className = "" }: { className?: string }) {
   return (
-    <hr className={`my-6 border-t border-gray-200 dark:border-gray-800 ${className}`} />
+    <hr
+      className={`my-6 border-t border-gray-200 dark:border-gray-800 ${className}`}
+    />
   );
 }
 
@@ -108,7 +110,9 @@ export function Card({
   children,
 }: PropsWithChildren<{ title?: string; className?: string }>) {
   return (
-    <div className={`rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-black/30 p-4 ${className}`}>
+    <div
+      className={`rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-black/30 p-4 ${className}`}
+    >
       {title && (
         <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
           {title}
@@ -190,18 +194,7 @@ export function SpecList({ children }: PropsWithChildren) {
 export function LangTabs({ children }: PropsWithChildren) {
   const { i18n } = useDocusaurusContext();
   const current = i18n?.currentLocale === "en" ? "en" : "th";
-  return (
-    <Tabs
-      groupId="lang"
-      defaultValue={current}
-      values={[
-        { label: "ภาษาไทย", value: "th" },
-        { label: "English", value: "en" },
-      ]}
-    >
-      {children}
-    </Tabs>
-  );
+  return { children };
 }
 
 export const LangTabItem = TabItem;
