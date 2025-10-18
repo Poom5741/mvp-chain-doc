@@ -1,9 +1,10 @@
 <!-- markdownlint-disable MD041 -->
-import { Section, AnimatedHeading } from '@site/src/components/ui/Docs';
+
+import { Section, AnimatedHeading } from '@site/src/components/ui/Docs'
 
 <Section>
-  <AnimatedHeading as="h1">Security Considerations</AnimatedHeading>
-  <ul className="list-disc pl-6 mt-2">
+  <AnimatedHeading as='h1'>Security Considerations</AnimatedHeading>
+  <ul className='list-disc pl-6 mt-2'>
     <li>
       Privileges: admin/owner roles as discovered on Etherscan:
       <strong>Not Public</strong>; upgraders/timelocks if applicable:
@@ -14,9 +15,8 @@ import { Section, AnimatedHeading } from '@site/src/components/ui/Docs';
       <strong>Not Public</strong>.
     </li>
     <li>
-      Bridge risk: L1 custody/escrow and L3 minting introduce replay/censorship risks; users should verify bridge
-      contracts.
+      Bridge risk: L1 custody/escrow and L3 minting introduce replay/censorship risks; users should
+      verify bridge contracts.
     </li>
   </ul>
-  
 </Section>

@@ -2,22 +2,34 @@
 sidebar_position: 5
 ---
 
-import { Section, AnimatedHeading, Lead, Card, Divider, Callout } from '@site/src/components/ui/Docs';
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  Card,
+  Divider,
+  Callout,
+} from '@site/src/components/ui/Docs'
 
 <Section>
-  <AnimatedHeading as="h1">Security & Risk Mitigation</AnimatedHeading>
-  <Lead>The system’s security and risk framework centers on auditability, rigorous key management, privacy, and appropriate communication.</Lead>
-  <div className="grid md:grid-cols-2 gap-3 mt-3">
-    <Card title="Security Controls">
+  <AnimatedHeading as='h1'>Security & Risk Mitigation</AnimatedHeading>
+  <Lead>
+    The system’s security and risk framework centers on auditability, rigorous key management,
+    privacy, and appropriate communication.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='Security Controls'>
       <ul>
         <li>Smart Contract Audit: all core contracts (static/runtime)</li>
         <li>Key Management: multi-sig; MPC/HSM; role segregation</li>
         <li>Monitoring: on-chain anomalies; withdrawal patterns; fraud flags</li>
         <li>Bug Bounty: open to researchers; SLA for vulnerability fixes</li>
-        <li>Privacy & Encryption: data minimization; encryption at rest/in transit; access logging</li>
+        <li>
+          Privacy & Encryption: data minimization; encryption at rest/in transit; access logging
+        </li>
       </ul>
     </Card>
-    <Card title="Compliance & Risks">
+    <Card title='Compliance & Risks'>
       <ul>
         <li>Language: avoid investment-like phrasing; no yield/return promises</li>
         <li>Legal/Interpretation: monitor regulations and best practices</li>
@@ -28,5 +40,7 @@ import { Section, AnimatedHeading, Lead, Card, Divider, Callout } from '@site/sr
     </Card>
   </div>
   <Divider />
-  <Callout type="important">No financial return/yield promises; avoid investment-like communication</Callout>
+  <Callout type='important'>
+    No financial return/yield promises; avoid investment-like communication
+  </Callout>
 </Section>

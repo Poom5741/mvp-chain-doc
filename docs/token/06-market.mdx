@@ -1,15 +1,20 @@
 <!-- markdownlint-disable MD041 -->
-import { Section, AnimatedHeading, Callout } from '@site/src/components/ui/Docs';
+
+import { Section, AnimatedHeading, Callout } from '@site/src/components/ui/Docs'
 
 <Section>
-  <AnimatedHeading as="h1">Market Microstructure</AnimatedHeading>
-  <ul className="list-disc pl-6 mt-2">
-    <li>Liquidity Sources: list known DEX/aggregators and L1 bridges (links only; no price commentary).</li>
+  <AnimatedHeading as='h1'>Market Microstructure</AnimatedHeading>
+  <ul className='list-disc pl-6 mt-2'>
+    <li>
+      Liquidity Sources: list known DEX/aggregators and L1 bridges (links only; no price
+      commentary).
+    </li>
     <li>Routing: L1 → L3 via canonical/partner bridges; verify contract addresses.</li>
     <li>Venues: centralized listings if any (links only). Avoid forward-looking claims.</li>
     <li>Monitoring: prefer explorers and on-chain analytics; avoid unverifiable dashboards.</li>
   </ul>
-  <Callout type="note" className="mt-3">
-    Provide links to bridge/exchange docs and contract addresses. Do not include price or volume projections.
+  <Callout type='note' className='mt-3'>
+    Provide links to bridge/exchange docs and contract addresses. Do not include price or volume
+    projections.
   </Callout>
 </Section>

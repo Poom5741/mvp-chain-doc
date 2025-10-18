@@ -1,5 +1,13 @@
 <!-- markdownlint-disable MD041 -->
-import { Section, AnimatedHeading, Lead, SpecList, SpecItem, Callout } from '@site/src/components/ui/Docs';
+
+import {
+  Section,
+  AnimatedHeading,
+  Lead,
+  SpecList,
+  SpecItem,
+  Callout,
+} from '@site/src/components/ui/Docs'
 
 <Section>
   <AnimatedHeading as="h1">System Context (Token ↔ MVP CHAIN)</AnimatedHeading>
@@ -8,22 +16,44 @@ import { Section, AnimatedHeading, Lead, SpecList, SpecItem, Callout } from '@si
     accounting. Bridging mints an L3 representation redeemable to L1.
   </Lead>
 
-  <AnimatedHeading as="h2" className="mt-6">On‑chain Specification</AnimatedHeading>
-  <SpecList>
-    <SpecItem label="Network" value={<>Ethereum Mainnet</>} />
-    <SpecItem label="Standard" value={<>ERC‑20</>} />
-    <SpecItem label="Contract (plain)" value={<code>0x88888888a98Cb1525A98c354F17EFc8d73EF07A6</code>} />
-    <SpecItem label="Contract (EIP‑55)" value={<code>0x88888888a98Cb1525A98c354F17EFc8d73EF07A6</code>} />
-    <SpecItem label="Name / Symbol" value={<><strong>Not Public</strong> / <strong>Not Public</strong></>} />
-    <SpecItem label="Decimals" value={<strong>18</strong>} />
-    <SpecItem label="Verified Source" value={<strong>yes</strong>} />
-    <SpecItem label="Owner/Admin" value={<strong>Not Public</strong>} />
-    <SpecItem label="Upgradeability" value={<strong>Proxy/Upgradeable (detected)</strong>} />
-    <SpecItem label="Pausable/Blacklist" value={<strong>Not Public</strong>} />
-    <SpecItem label="Total Supply" value={<strong>700,000,000 MVP</strong>} />
-    <SpecItem label="Holders / Transfers" value={<><strong>7</strong> / <strong>Not Public</strong></>} />
-    <SpecItem label="Last Queried" value={<strong>2025-10-18T04:05:55Z</strong>} />
-  </SpecList>
+<AnimatedHeading as='h2' className='mt-6'>
+  On‑chain Specification
+</AnimatedHeading>
+<SpecList>
+  <SpecItem label='Network' value={<>Ethereum Mainnet</>} />
+  <SpecItem label='Standard' value={<>ERC‑20</>} />
+  <SpecItem
+    label='Contract (plain)'
+    value={<code>0x88888888a98Cb1525A98c354F17EFc8d73EF07A6</code>}
+  />
+  <SpecItem
+    label='Contract (EIP‑55)'
+    value={<code>0x88888888a98Cb1525A98c354F17EFc8d73EF07A6</code>}
+  />
+  <SpecItem
+    label='Name / Symbol'
+    value={
+      <>
+        <strong>Not Public</strong> / <strong>Not Public</strong>
+      </>
+    }
+  />
+  <SpecItem label='Decimals' value={<strong>18</strong>} />
+  <SpecItem label='Verified Source' value={<strong>yes</strong>} />
+  <SpecItem label='Owner/Admin' value={<strong>Not Public</strong>} />
+  <SpecItem label='Upgradeability' value={<strong>Proxy/Upgradeable (detected)</strong>} />
+  <SpecItem label='Pausable/Blacklist' value={<strong>Not Public</strong>} />
+  <SpecItem label='Total Supply' value={<strong>700,000,000 MVP</strong>} />
+  <SpecItem
+    label='Holders / Transfers'
+    value={
+      <>
+        <strong>7</strong> / <strong>Not Public</strong>
+      </>
+    }
+  />
+  <SpecItem label='Last Queried' value={<strong>2025-10-18T04:05:55Z</strong>} />
+</SpecList>
 
   <Callout type="note" className="mt-4">
     Data is fetched from Etherscan at build time and snapshotted; see Data Provenance.

@@ -2,13 +2,16 @@
 sidebar_position: 3
 ---
 
-import { Section, AnimatedHeading, Lead, Card, Divider } from '@site/src/components/ui/Docs';
+import { Section, AnimatedHeading, Lead, Card, Divider } from '@site/src/components/ui/Docs'
 
 <Section>
-  <AnimatedHeading as="h1">Technical Architecture</AnimatedHeading>
-  <Lead>Architecture overview of the MVP ecosystem spanning L3 (MVP Chain), smart contract standards, the wallet, and the UT1-only exchange — focused on safety, compliance, and strong UX.</Lead>
-  <div className="grid md:grid-cols-2 gap-3 mt-3">
-    <Card title="MVP Chain (Layer 3)">
+  <AnimatedHeading as='h1'>Technical Architecture</AnimatedHeading>
+  <Lead>
+    Architecture overview of the MVP ecosystem spanning L3 (MVP Chain), smart contract standards,
+    the wallet, and the UT1-only exchange — focused on safety, compliance, and strong UX.
+  </Lead>
+  <div className='grid md:grid-cols-2 gap-3 mt-3'>
+    <Card title='MVP Chain (Layer 3)'>
       <ul>
         <li>Rollup (Optimistic/ZK); inherits security/finality from World Chain (L2) and L1</li>
         <li>EVM-compatible (Solidity/Foundry/Hardhat)</li>
@@ -19,7 +22,7 @@ import { Section, AnimatedHeading, Lead, Card, Divider } from '@site/src/compone
         <li>Observability: Prometheus/Grafana/ELK; on-chain indexer</li>
       </ul>
     </Card>
-    <Card title="Smart Contracts & Standards">
+    <Card title='Smart Contracts & Standards'>
       <ul>
         <li>UT1-20 (ERC-20 profile): ready-to-use, non-MOP, no yield, KYA link</li>
         <li>UT1-721 (NFT rights/tickets): one-time use, expiry, transfer policy</li>
@@ -28,7 +31,7 @@ import { Section, AnimatedHeading, Lead, Card, Divider } from '@site/src/compone
         <li>Admin controls: role-based, time-locked upgrades, emergency pause (multi-sig)</li>
       </ul>
     </Card>
-    <Card title="MVP Wallet">
+    <Card title='MVP Wallet'>
       <ul>
         <li>MPC + biometrics + 2FA (secure recovery/key sharding)</li>
         <li>Account Abstraction (optional): gas assistance; batched tx for UX</li>
@@ -38,7 +41,7 @@ import { Section, AnimatedHeading, Lead, Card, Divider } from '@site/src/compone
         <li>Privacy by Design: minimal data; PDPA compliant</li>
       </ul>
     </Card>
-    <Card title="MVP Exchange (UT1 Only)">
+    <Card title='MVP Exchange (UT1 Only)'>
       <ul>
         <li>Spot-only (no derivatives/leverage)</li>
         <li>Matching: orderbook + AMM hybrid for initial liquidity</li>

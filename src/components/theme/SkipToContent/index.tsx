@@ -1,18 +1,12 @@
-import React from 'react';
-import useIsBrowser from '@docusaurus/useIsBrowser';
+import React from 'react'
 
-export default function SkipToContent(): JSX.Element {
-  const isBrowser = useIsBrowser();
-
-  if (!isBrowser) {
-    return <></>;
-  }
-
+export default function SkipToContent() {
+  // Simple implementation without useIsBrowser hook
   return (
     <>
       <a
-        href="#__docusaurus_skipToContent_fallback"
-        className="skip-to-content"
+        href='#__docusaurus_skipToContent_fallback'
+        className='skip-to-content'
         style={{
           position: 'fixed',
           top: '-40px',
@@ -27,27 +21,16 @@ export default function SkipToContent(): JSX.Element {
           fontSize: '14px',
           transition: 'top 0.3s',
         }}
-        onFocus={(e) => {
-          e.currentTarget.style.top = '0';
+        onFocus={e => {
+          e.currentTarget.style.top = '0'
         }}
-        onBlur={(e) => {
-          e.currentTarget.style.top = '-40px';
+        onBlur={e => {
+          e.currentTarget.style.top = '-40px'
         }}
       >
         Skip to main content
       </a>
-      <div id="__docusaurus_skipToContent_fallback" />
-      <style jsx>{`
-        .skip-to-content:focus {
-          top: 0;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .skip-to-content {
-            transition: none;
-          }
-        }
-      `}</style>
+      <div id='__docusaurus_skipToContent_fallback' />
     </>
-  );
+  )
 }
