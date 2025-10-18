@@ -11,10 +11,9 @@ const config: Config = {
   markdown: { mermaid: true, hooks: { onBrokenMarkdownLinks: 'warn', onBrokenMarkdownImages: 'ignore' } },
   themes: ['@docusaurus/theme-mermaid'],
   i18n: {
-    defaultLocale: 'th',
-    locales: ['th', 'en'],
+    defaultLocale: 'en',
+    locales: ['en'],
     localeConfigs: {
-      th: { label: 'ภาษาไทย' },
       en: { label: 'English' },
     },
   },
@@ -40,8 +39,8 @@ const config: Config = {
     navbar: {
       title: 'MVP CHAIN',
       items: [
-        { type: 'doc', docId: 'exchange/cover', label: 'Exchange', position: 'left' },
-        { type: 'localeDropdown', position: 'right' },
+        { type: 'doc', docId: 'exchange/cover', label: 'Exchange', position: 'left' }
+        // removed localeDropdown to enforce English-only UI
       ],
     },
     mermaid: {
