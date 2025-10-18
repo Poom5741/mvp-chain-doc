@@ -43,15 +43,29 @@ html[data-theme="dark"] {
   --ifm-font-color-base: #f8fafc;
   --ifm-navbar-background-color: #0f0f23;
   --ifm-navbar-link-color: #f8fafc;
-  --ifm-color-primary: #818cf8; /* indigo-400 - softer on dark */
+  --ifm-color-primary: #fbbf24; /* amber-400 - warmer accent */
+  --ifm-link-color: #fbbf24; /* amber-400 */
+  --ifm-link-hover-color: #f59e0b; /* amber-500 */
   --ifm-code-background: #1e1b4b; /* indigo-950 */
   --ifm-toc-border-color: #312e81;
+  --ifm-color-emphasis-300: #334155; /* slate-700 */
+  --ifm-color-emphasis-600: #64748b; /* slate-500 */
+  --ifm-color-emphasis-800: #e2e8f0; /* slate-200 */
+  --ifm-menu-color: #cbd5e1;
+  --ifm-menu-color-background-active: #312e81;
+  --ifm-color-content: #e2e8f0;
+  --ifm-color-content-secondary: #cbd5e1;
 
   /* Dark mode text colors with better contrast */
   --text-primary: #f8fafc; /* slate-50 */
   --text-secondary: #e2e8f0; /* slate-200 */
   --text-muted: #cbd5e1; /* slate-300 */
-  --text-accent: #a5b4fc; /* indigo-300 */
+  --text-accent: #fbbf24; /* amber-400 */
+
+  /* Surface colors */
+  --surface: #0f0f23;
+  --surface-elevated: #1e1b4b;
+  --surface-elevated-2: #312e81;
 }
 
 /* Enhanced typography system with serif for readability */
@@ -628,6 +642,273 @@ html[data-theme="dark"] .page-header {
   .font-swap {
     font-display: swap;
   }
+}
+
+/* Enhanced Navbar Styling */
+.navbar {
+  background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 100%) !important;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__title {
+  color: #f8fafc !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar__link {
+  color: #cbd5e1 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: #fbbf24 !important;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 80%;
+}
+
+/* GitHub Link Styling */
+.navbar-github-link {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #f8fafc !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: auto !important;
+  height: auto !important;
+}
+
+.navbar-github-link:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: #fbbf24;
+  color: #fbbf24 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(251, 191, 36, 0.2);
+}
+
+.navbar-github-link::before {
+  content: '⚡';
+  font-size: 18px;
+}
+
+/* CTA Button Styling */
+.navbar-cta-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px !important;
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%) !important;
+  border: none;
+  border-radius: 8px;
+  color: #0f0f23 !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.025em;
+  transition: all 0.3s ease;
+  min-width: auto !important;
+  height: auto !important;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+}
+
+.navbar-cta-button:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.4);
+  color: #0f0f23 !important;
+}
+
+/* Dropdown Menu Styling */
+.navbar__item--dropdown .navbar__link {
+  padding-right: 20px !important;
+}
+
+.navbar__dropdown {
+  background: #1e1b4b !important;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  margin-top: 12px;
+}
+
+.navbar__dropdown .navbar__item {
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.navbar__dropdown .navbar__item:last-child {
+  border-bottom: none;
+}
+
+.navbar__dropdown .navbar__link {
+  color: #e2e8f0 !important;
+  padding: 12px 24px !important;
+  transition: all 0.3s ease;
+}
+
+.navbar__dropdown .navbar__link:hover {
+  background: rgba(99, 102, 241, 0.1) !important;
+  color: #fbbf24 !important;
+}
+
+/* Mobile Menu */
+.navbar-sidebar {
+  background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 100%) !important;
+  border-right: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.navbar-sidebar__back {
+  color: #cbd5e1 !important;
+}
+
+.navbar-sidebar__close {
+  color: #cbd5e1 !important;
+}
+
+/* Dark Theme Overrides */
+html[data-theme="dark"] .navbar {
+  background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 100%) !important;
+}
+
+html[data-theme="dark"] .navbar__title {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .navbar__link {
+  color: #cbd5e1 !important;
+}
+
+/* Ensure proper spacing in navbar */
+.navbar__items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__items--right {
+  gap: 12px;
+}
+
+/* Fix for GitHub icon visibility */
+.navbar-github-link svg {
+  display: none;
+}
+
+/* Add custom icons */
+.navbar-github-link::after {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f8fafc'%3E%3Cpath d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Enhanced Dark Theme */
+html[data-theme="dark"] {
+  background-color: #0f0f23;
+}
+
+html[data-theme="dark"] body {
+  background-color: #0f0f23 !important;
+  background-image: none !important;
+}
+
+html[data-theme="dark"] .footer {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f0f23 100%) !important;
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Sidebar dark theme */
+html[data-theme="dark"] .sidebar {
+  background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 100%) !important;
+  border-right: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+html[data-theme="dark"] .sidebar__item {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .sidebar__item:hover {
+  color: #fbbf24;
+}
+
+/* Table of contents dark theme */
+html[data-theme="dark"] .table-of-contents {
+  border-left-color: #312e81 !important;
+}
+
+html[data-theme="dark"] .table-of-contents__link {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .table-of-contents__link:hover,
+html[data-theme="dark"] .table-of-contents__link--active {
+  color: #fbbf24 !important;
+}
+
+/* Pagination dark theme */
+html[data-theme="dark"] .pagination-nav__link {
+  background: #1e1b4b !important;
+  border-color: #312e81 !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .pagination-nav__link:hover {
+  background: #312e81 !important;
+  color: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+}
+
+/* Edit this page dark theme */
+html[data-theme="dark"] .theme-edit-this-page {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .theme-edit-this-page:hover {
+  color: #fbbf24 !important;
+}
+
+/* Theme toggle dark theme */
+html[data-theme="dark"] .clean-btn {
+  color: #cbd5e1 !important;
+  border-color: #312e81 !important;
+}
+
+html[data-theme="dark"] .clean-btn:hover {
+  color: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+  background: rgba(251, 191, 36, 0.1) !important;
 }
 
 /* Accessibility improvements */

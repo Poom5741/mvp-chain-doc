@@ -73,9 +73,32 @@ const config: Config = {
           position: "left",
         },
         {
+          type: "dropdown",
+          label: "Whitepapers",
+          position: "left",
+          items: [
+            {
+              label: "Token",
+              to: "/token/00-cover",
+            },
+            {
+              label: "Chain",
+              to: "/chain/00-cover",
+            },
+          ],
+        },
+        {
           href: "https://github.com/mvpchain",
           label: "GitHub",
           position: "right",
+          className: "navbar-github-link",
+          "aria-label": "GitHub repository",
+        },
+        {
+          href: "https://mvpcha.in",
+          label: "Launch App",
+          position: "right",
+          className: "navbar-cta-button",
         },
       ],
       hideOnScroll: false,
