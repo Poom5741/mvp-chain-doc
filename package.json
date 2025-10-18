@@ -7,15 +7,20 @@
     "build": "docusaurus build",
     "build:vercel": "docusaurus build",
     "serve": "docusaurus serve",
+    "lint": "eslint src/ scripts/ --ext .js,.ts,.tsx --cache",
+    "lint:fix": "eslint src/ scripts/ --ext .js,.ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
     "lint:md": "markdownlint 'docs/{token,chain}/**/*.mdx' --ignore node_modules",
     "lint:prose": "vale docs/token docs/chain",
-    "format": "prettier -w 'docs/**/*.mdx'",
+    "format": "prettier -w 'docs/**/*.{mdx,md}' 'src/**/*.{js,ts,tsx}' 'scripts/**/*.js' '*.{json,js,yml}'",
+    "format:check": "prettier -c 'docs/**/*.{mdx,md}' 'src/**/*.{js,ts,tsx}' 'scripts/**/*.js' '*.{json,js,yml}'",
     "fetch": "node scripts/fetch-data.js",
     "generate": "node scripts/generate-docs.js",
     "figures": "mmdc -t neutral -c resource/diagrams/mermaid.config.json --backgroundColor transparent -i resource/diagrams/fig-arch.mmd -o static/figures/fig-arch.svg && mmdc -t neutral -c resource/diagrams/mermaid.config.json --backgroundColor transparent -i resource/diagrams/fig-bridge.mmd -o static/figures/fig-bridge.svg",
     "prepare:docs": "npm run fetch && npm run generate && npm run figures",
     "pdf": "make pdf",
-    "all": "npm run fetch && npm run generate && npm run figures && npm run format && npm run lint:md && npm run lint:prose && npm run build && npm run pdf",
+    "pre-commit": "npm run type-check && npm run lint && npm run format:check",
+    "all": "npm run fetch && npm run generate && npm run figures && npm run format && npm run lint:md && npm run lint:prose && npm run lint:fix && npm run type-check && npm run build && npm run pdf",
     "migrate": "node scripts/migrate.js"
   },
   "dependencies": {
@@ -32,14 +37,20 @@
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^10.9.1",
-    "puppeteer": "^24.1.1",
+    "puppeteer": "^21.9.1",
     "markdownlint-cli": "^0.40.0",
     "prettier": "^3",
     "@docusaurus/types": "^3.0.0",
     "prism-react-renderer": "^2.0.0",
     "tailwindcss": "^3.4.12",
     "postcss": "^8.4.44",
-    "autoprefixer": "^10.4.20"
+    "autoprefixer": "^10.4.20",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "typescript": "^5.6.3"
   },
   "engines": {
     "node": ">=18"

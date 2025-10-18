@@ -22,10 +22,86 @@ function toChecksumAddress(address) {
   return ret;
 }
 
-async function fetchText(url) {
-  const res = await fetch(url, { headers: { 'User-Agent': 'MVP-Docs/1.0 (+https://mvpcha.in)' } });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  return await res.text();
+async function fetchText(url, retries = 3, timeout = 10000) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+      const res = await fetch(url, {
+        headers: {
+          'User-Agent': 'MVP-Docs/1.0 (+https://mvpcha.in)',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept-Encoding': 'gzip, deflate',
+          'Connection': 'keep-alive',
+        },
+        signal: controller.signal
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status} for ${url}`);
+      }
+
+      return await res.text();
+    } catch (error) {
+      if (error.name === 'AbortError') {
+        console.warn(`Timeout (${timeout}ms) for ${url}, attempt ${i + 1}/${retries}`);
+      } else {
+        console.warn(`Failed to fetch ${url}: ${error.message}, attempt ${i + 1}/${retries}`);
+      }
+
+      if (i === retries - 1) {
+        throw error;
+      }
+
+      // Exponential backoff
+      await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
+    }
+  }
+}
+
+function validateEtherscanData(data) {
+  const errors = [];
+
+  if (!data.name || typeof data.name !== 'string' || data.name.length > 100) {
+    errors.push('Invalid or missing token name');
+  }
+
+  if (!data.symbol || typeof data.symbol !== 'string' || !/^[A-Z0-9]+$/i.test(data.symbol) || data.symbol.length > 10) {
+    errors.push('Invalid or missing token symbol');
+  }
+
+  if (data.decimals !== null) {
+    const dec = parseInt(data.decimals, 10);
+    if (isNaN(dec) || dec < 0 || dec > 18) {
+      errors.push('Invalid decimals value');
+    }
+  }
+
+  if (data.holders !== null) {
+    const holders = parseInt(data.holders.replace(/,/g, ''), 10);
+    if (isNaN(holders) || holders < 0) {
+      errors.push('Invalid holders count');
+    }
+  }
+
+  if (data.transfers !== null) {
+    const transfers = parseInt(data.transfers.replace(/,/g, ''), 10);
+    if (isNaN(transfers) || transfers < 0) {
+      errors.push('Invalid transfers count');
+    }
+  }
+
+  if (data.owner && data.owner !== 'Not Public') {
+    if (!/^0x[a-fA-F0-9]{40}$/.test(data.owner)) {
+      errors.push('Invalid owner address format');
+    }
+  }
+
+  return errors;
 }
 
 function extractEtherscan(html) {
@@ -68,7 +144,14 @@ function extractEtherscan(html) {
   const upgraders = /Proxy Admin|Admin\s*:?\s*(0x[a-fA-F0-9]{40})/i.exec(text)?.[1] || 'Not Public';
   const pausable = /Pausable/i.test(text) ? 'true (Pausable detected)' : 'Not Public';
 
-  return { name, symbol, decimals, holders, transfers, verified, owner, upgraders, upgradeability, pausable, totalSupply };
+  const data = { name, symbol, decimals, holders, transfers, verified, owner, upgraders, upgradeability, pausable, totalSupply };
+  const validationErrors = validateEtherscanData(data);
+
+  if (validationErrors.length > 0) {
+    console.warn('Etherscan data validation warnings:', validationErrors);
+  }
+
+  return data;
 }
 
 async function main() {

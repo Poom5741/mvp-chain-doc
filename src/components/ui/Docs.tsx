@@ -13,12 +13,12 @@ export function AnimatedHeading({
   className = "",
   children,
 }: HeadingProps) {
-  const Tag = as as any;
+  const Tag = as as keyof JSX.IntrinsicElements;
   const base = {
-    h1: "text-3xl md:text-4xl font-semibold text-gray-900 dark:text-gray-100",
-    h2: "text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-100",
-    h3: "text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-200",
-    h4: "text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200",
+    h1: "text-[2.5rem] md:text-[3rem] font-semibold text-[color:var(--text-primary)]",
+    h2: "text-[2rem] md:text-[2.5rem] font-semibold text-[color:var(--text-primary)]",
+    h3: "text-[1.5rem] md:text-[2rem] font-medium text-[color:var(--text-primary)]",
+    h4: "text-[1.25rem] md:text-[1.5rem] font-medium text-[color:var(--text-primary)]",
   }[as];
   return (
     <Tag className={`tracking-tight animate-fade-in-up ${base} ${className}`}>
@@ -33,7 +33,7 @@ export function Section({
 }: PropsWithChildren<{ className?: string }>) {
   return (
     <section
-      className={`rounded-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm bg-white/70 dark:bg-black/40 backdrop-blur ${className}`}
+      className={`rounded-2xl p-8 md:p-10 border border-[color:var(--border-light)] dark:border-[color:var(--border-dark)] bg-[color:var(--surface-elevated-2)] dark:bg-[color:var(--surface-elevated-dark-2)] shadow-lg backdrop-blur-sm card-hover transition-all duration-300 ${className}`}
     >
       {children}
     </section>
@@ -46,7 +46,7 @@ export function Lead({
 }: PropsWithChildren<{ className?: string }>) {
   return (
     <p
-      className={`text-lg md:text-xl text-gray-700 dark:text-gray-300 mt-2 ${className}`}
+      className={`text-xl md:text-2xl text-[color:var(--text-secondary)] mt-3 leading-relaxed font-[Crimson_Text] italic ${className}`}
     >
       {children}
     </p>
@@ -61,17 +61,18 @@ export function Callout({
   type?: "note" | "tip" | "warning" | "important";
   className?: string;
 }>) {
-  const ring =
-    type === "warning"
-      ? "border-amber-300"
-      : type === "important"
-        ? "border-sky-300"
-        : type === "tip"
-          ? "border-emerald-300"
-          : "border-gray-200";
+  const colors = {
+    note: "border-l-4 border-[color:var(--text-accent)] bg-gradient-to-r from-[color:var(--text-accent)]/5 to-transparent",
+    tip: "border-l-4 border-[color:var(--success)] bg-gradient-to-r from-[color:var(--success)]/5 to-transparent",
+    warning:
+      "border-l-4 border-[color:var(--warning)] bg-gradient-to-r from-[color:var(--warning)]/5 to-transparent",
+    important:
+      "border-l-4 border-[color:var(--info)] bg-gradient-to-r from-[color:var(--info)]/5 to-transparent",
+  };
+
   return (
     <div
-      className={`border ${ring} rounded-lg p-4 bg-white/80 dark:bg-black/30 ${className}`}
+      className={`rounded-xl p-6 my-6 ${colors[type]} shadow-sm ${className}`}
     >
       {children}
     </div>
@@ -81,7 +82,7 @@ export function Callout({
 export function Divider({ className = "" }: { className?: string }) {
   return (
     <hr
-      className={`my-6 border-t border-gray-200 dark:border-gray-800 ${className}`}
+      className={`my-6 border-t border-[color:var(--border-light)] dark:border-[color:var(--border-dark)] ${className}`}
     />
   );
 }
@@ -93,11 +94,16 @@ export function PageHeader({
 }: PropsWithChildren<{ title: string; subtitle?: string }>) {
   return (
     <div className="page-header">
-      <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-gray-100">
-        {title}
-      </h1>
+      <div className="relative">
+        <h1 className="text-4xl md:text-5xl font-bold text-[color:var(--text-primary)] leading-tight">
+          {title}
+        </h1>
+        <div className="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-[color:var(--text-accent)] to-transparent rounded-full"></div>
+      </div>
       {subtitle && (
-        <p className="mt-2 text-gray-600 dark:text-gray-300">{subtitle}</p>
+        <p className="mt-6 text-xl md:text-2xl text-[color:var(--text-secondary)] font-[Crimson_Text] italic leading-relaxed">
+          {subtitle}
+        </p>
       )}
       {children}
     </div>
@@ -111,14 +117,17 @@ export function Card({
 }: PropsWithChildren<{ title?: string; className?: string }>) {
   return (
     <div
-      className={`rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-black/30 p-4 ${className}`}
+      className={`rounded-2xl border border-[color:var(--border-light)] dark:border-[color:var(--border-dark)] bg-gradient-to-br from-[color:var(--surface-elevated)] to-[color:var(--surface-elevated-2)] dark:from-[color:var(--surface-elevated-dark)] dark:to-[color:var(--surface-elevated-dark-2)] p-6 shadow-lg card-hover backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${className}`}
     >
       {title && (
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+        <h3 className="text-xl font-semibold text-[color:var(--text-primary)] mb-4 flex items-center">
+          <span className="w-1 h-6 bg-gradient-to-b from-[color:var(--text-accent)] to-transparent rounded-full mr-3"></span>
           {title}
         </h3>
       )}
-      <div className="prose dark:prose-invert max-w-none">{children}</div>
+      <div className="prose prose-slate dark:prose-invert max-w-none prose-p:text-[color:var(--text-secondary)] leading-relaxed">
+        {children}
+      </div>
     </div>
   );
 }
@@ -137,8 +146,12 @@ export function Figure({
   return (
     <figure className={`mdx-figure ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt} />
-      {caption && <figcaption>{caption}</figcaption>}
+      <img src={src} alt={alt} className="rounded-t-xl" />
+      {caption && (
+        <figcaption className="text-[color:var(--text-secondary)]">
+          {caption}
+        </figcaption>
+      )}
     </figure>
   );
 }
@@ -149,33 +162,104 @@ export function DisclaimerModal({
   children,
 }: PropsWithChildren<{ title?: string; buttonLabel?: string }>) {
   const [open, setOpen] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  // Handle focus trap
+  useEffect(() => {
+    if (open) {
+      const previousFocus = document.activeElement as HTMLElement;
+      const modal = modalRef.current;
+
+      if (modal) {
+        // Focus the modal
+        modal.focus();
+
+        // Trap focus within modal
+        const focusableElements = modal.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        ) as NodeListOf<HTMLElement>;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        const handleTabKey = (e: KeyboardEvent) => {
+          if (e.key === 'Tab') {
+            if (e.shiftKey) {
+              if (document.activeElement === firstElement) {
+                lastElement?.focus();
+                e.preventDefault();
+              }
+            } else {
+              if (document.activeElement === lastElement) {
+                firstElement?.focus();
+                e.preventDefault();
+              }
+            }
+          }
+        };
+
+        const handleEscape = (e: KeyboardEvent) => {
+          if (e.key === 'Escape') {
+            setOpen(false);
+          }
+        };
+
+        document.addEventListener('keydown', handleTabKey);
+        document.addEventListener('keydown', handleEscape);
+
+        return () => {
+          document.removeEventListener('keydown', handleTabKey);
+          document.removeEventListener('keydown', handleEscape);
+          previousFocus?.focus();
+        };
+      }
+    }
+  }, [open]);
+
   return (
     <div className="mt-6">
       <button
         onClick={() => setOpen(true)}
-        className="inline-flex items-center rounded-md bg-gray-900 text-white px-4 py-2 font-medium hover:bg-gray-800 transition"
+        className="inline-flex items-center rounded-md bg-[color:var(--brand)] text-white px-4 py-2 font-medium hover:bg-[color:var(--brand)]/90 transition-all duration-200 button-hover focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/50 focus:ring-offset-2"
       >
         {buttonLabel}
       </button>
       {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          onClick={() => setOpen(false)}
+        >
           <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setOpen(false)}
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            aria-hidden="true"
           />
-          <div className="relative z-10 w-[92%] max-w-2xl rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 animate-fade-in-up">
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+          <div
+            ref={modalRef}
+            className="relative z-10 w-full max-w-2xl rounded-xl bg-[color:var(--surface)] dark:bg-[color:var(--surface-dark)] border border-[color:var(--border-light)] dark:border-[color:var(--border-dark)] p-6 animate-fade-in-up shadow-soft-lg outline-none"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            onClick={(e) => e.stopPropagation()}
+            tabIndex={-1}
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h3
+                id="modal-title"
+                className="text-lg font-semibold text-[color:var(--text-primary)]"
+              >
                 {title}
               </h3>
               <button
                 onClick={() => setOpen(false)}
-                className="text-gray-500 hover:text-gray-800 dark:hover:text-gray-200"
+                className="text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] transition-colors duration-200 text-xl leading-none p-1 rounded-md hover:bg-[color:var(--surface-elevated)] focus:outline-none focus:ring-2 focus:ring-[color:var(--text-accent)]/50"
+                aria-label="Close modal"
               >
                 ✕
               </button>
             </div>
-            <div className="prose dark:prose-invert max-w-none">{children}</div>
+            <div className="prose prose-slate dark:prose-invert max-w-none prose-p:text-[color:var(--text-secondary)]">
+              {children}
+            </div>
           </div>
         </div>
       )}
@@ -192,33 +276,46 @@ export function SpecList({ children }: PropsWithChildren) {
 }
 
 export function LangTabs({ children }: PropsWithChildren) {
-  const { i18n } = useDocusaurusContext();
-  const current = i18n?.currentLocale === "en" ? "en" : "th";
-  return { children };
+  // Since we've removed Thai locale support, this component just renders children
+  // Keeping for backwards compatibility
+  return <>{children}</>;
 }
 
 export const LangTabItem = TabItem;
 
 function CopyButton({ getText }: { getText: () => string }) {
   const [copied, setCopied] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const onCopy = async () => {
     try {
       const text = getText();
       if (!text) return;
       await navigator.clipboard.writeText(text);
       setCopied(true);
+      setError(null);
       setTimeout(() => setCopied(false), 1500);
     } catch (e) {
-      // noop
+      console.error('Failed to copy text: ', e);
+      setError('Copy failed');
+      setCopied(false);
+      setTimeout(() => setError(null), 2000);
     }
   };
+
   return (
     <button
       onClick={onCopy}
       aria-label="Copy to clipboard"
-      className="ml-auto shrink-0 inline-flex items-center gap-1 rounded-md border border-gray-300 dark:border-gray-700 px-2 py-1 text-xs text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+      className={`ml-auto shrink-0 inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs transition-all duration-150 button-hover ${
+        error
+          ? 'border-red-500/30 text-red-500 bg-red-500/10'
+          : copied
+            ? 'border-green-500/30 text-green-500 bg-green-500/10'
+            : 'border-[color:var(--border-light)] dark:border-[color:var(--border-dark)] text-[color:var(--text-secondary)] hover:bg-[color:var(--surface-elevated)] dark:hover:bg-[color:var(--surface-elevated-dark)]'
+      }`}
     >
-      {copied ? "Copied" : "Copy"}
+      {error ? error : copied ? "✓ Copied" : "Copy"}
     </button>
   );
 }
@@ -250,30 +347,32 @@ function SpecItemBase({
 
   const containerClass =
     variant === "light"
-      ? "bg-gray-50 border border-gray-200"
+      ? "bg-[color:var(--surface-elevated)] border border-[color:var(--border-light)]"
       : variant === "dark"
-        ? "bg-gray-900/40 border border-gray-700"
-        : "bg-gray-50 dark:bg-gray-900/30 border border-gray-200 dark:border-gray-800";
+        ? "bg-[color:var(--surface-elevated-dark)]/40 border border-[color:var(--border-dark)]"
+        : "bg-[color:var(--surface-elevated)] dark:bg-[color:var(--surface-elevated-dark)]/30 border border-[color:var(--border-light)] dark:border-[color:var(--border-dark)]";
 
   const labelClass =
     variant === "light"
-      ? "text-sm text-gray-500"
+      ? "text-sm text-[color:var(--text-muted)]"
       : variant === "dark"
-        ? "text-sm text-gray-400"
-        : "text-sm text-gray-500 dark:text-gray-400";
+        ? "text-sm text-[color:var(--text-muted)]"
+        : "text-sm text-[color:var(--text-muted)]";
 
   const valueClass =
     variant === "light"
-      ? "text-sm text-gray-900"
+      ? "text-sm text-[color:var(--text-primary)]"
       : variant === "dark"
-        ? "text-sm text-gray-100"
-        : "text-sm text-gray-900 dark:text-gray-100";
+        ? "text-sm text-[color:var(--text-primary)]"
+        : "text-sm text-[color:var(--text-primary)]";
 
   return (
     <li
-      className={`flex flex-col md:flex-row items-start md:items-center gap-1 p-2 rounded-lg overflow-hidden ${containerClass}`}
+      className={`flex flex-col md:flex-row items-start md:items-center gap-2 p-3 rounded-lg overflow-hidden ${containerClass} hover:bg-[color:var(--surface-elevated)]/50 dark:hover:bg-[color:var(--surface-elevated-dark)]/50 transition-colors duration-150`}
     >
-      <span className={`w-[100px] md:w-[120px] shrink-0 ${labelClass}`}>
+      <span
+        className={`w-[100px] md:w-[120px] shrink-0 font-medium ${labelClass}`}
+      >
         {label}
       </span>
       <span
