@@ -1,22 +1,7 @@
-<!-- markdownlint-disable MD041 -->
-import { Section, AnimatedHeading } from '@site/src/components/ui/Docs';
+# Security Considerations
 
-<Section>
-  <AnimatedHeading as="h1">Security Considerations</AnimatedHeading>
-  <ul className="list-disc pl-6 mt-2">
-    <li>
-      Privileges: admin/owner roles as discovered on Etherscan:
-      <strong>{{TOKEN_OWNER}}</strong>; upgraders/timelocks if applicable:
-      <strong>{{TOKEN_UPGRADERS}}</strong>.
-    </li>
-    <li>
-      Upgrade risk: <strong>{{TOKEN_UPGRADEABILITY}}</strong>; pausable/blacklist:
-      <strong>{{TOKEN_PAUSABLE}}</strong>.
-    </li>
-    <li>
-      Bridge risk: L1 custody/escrow and L3 minting introduce replay/censorship risks; users should verify bridge
-      contracts.
-    </li>
-  </ul>
-  
-</Section>
+- Privileges: admin/owner roles as discovered on Etherscan: **{{TOKEN_OWNER}}**; upgraders/timelocks if applicable: **{{TOKEN_UPGRADERS}}**.
+- Upgrade risk: **{{TOKEN_UPGRADEABILITY}}**; pausable/blacklist: **{{TOKEN_PAUSABLE}}**.
+- Bridge risk: L1 custody/escrow and L3 minting introduce replay/censorship risks; users should verify bridge contracts.
+
+![Bridge Flow L1→MVP CHAIN](/figures/fig-bridge.svg)

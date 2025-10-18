@@ -1,43 +1,35 @@
-<!-- markdownlint-disable MD041 -->
-import { Section, AnimatedHeading, SpecList, SpecItem } from '@site/src/components/ui/Docs';
+# Network Specifications
 
-<Section>
-  <AnimatedHeading as="h1">Network Specifications</AnimatedHeading>
+- Chain ID: **{{MVP_CHAIN_ID}}**
+- RPC: `{{MVP_RPC}}`
+- Explorer: `{{MVP_EXPLORER}}`
+- Native Currency: **MVP**
+- Bridge (L1→MVP CHAIN): ETH gas on L1, ~10 minutes
+- Compatibility: EVM (Solidity, Web3)
+- Current Status: **Mainnet**
 
-  <SpecList>
-    <SpecItem label="Chain ID" value={<strong>{{MVP_CHAIN_ID}}</strong>} />
-    <SpecItem label="RPC" value={<code>{{MVP_RPC}}</code>} />
-    <SpecItem label="Explorer" value={<code>{{MVP_EXPLORER}}</code>} />
-    <SpecItem label="Native Currency" value={<strong>MVP</strong>} />
-    <SpecItem label="Bridge (L1→MVP CHAIN)" value={<>ETH gas on L1, ~10 minutes</>} />
-    <SpecItem label="Compatibility" value={<>EVM (Solidity, Web3)</>} />
-    <SpecItem label="Current Status" value={<strong>Mainnet</strong>} />
-  </SpecList>
+## Execution & Compatibility
 
-  <AnimatedHeading as="h2" className="mt-6">Execution & Compatibility</AnimatedHeading>
-  <p>EVM‑compatible; supports Solidity toolchains and common libraries.</p>
+EVM‑compatible; supports Solidity toolchains and common libraries.
 
-  <AnimatedHeading as="h2" className="mt-6">Sequencer & Finality Model</AnimatedHeading>
-  <p>
-    Current: centralized sequencer with optimistic finality; failures may delay inclusion. Target: increased
-    decentralization and fault‑tolerance. Fallback: transactions can be retried or routed via alternative gateways
-    if provided.
-  </p>
+## Sequencer & Finality Model
 
-  <AnimatedHeading as="h2" className="mt-6">Data Availability & Proofs</AnimatedHeading>
-  <p>
-    Current DA: inherits from the parent rollup stack; settlement to L1 with optimistic assumptions. Planned:
-    upgrades to DA and proof systems as released upstream.
-  </p>
+Current: centralized sequencer with optimistic finality; failures may delay
+inclusion. Target: increased decentralization and fault‑tolerance. Fallback:
+transactions can be retried or routed via alternative gateways if provided.
 
-  <AnimatedHeading as="h2" className="mt-6">Bridging</AnimatedHeading>
-  <p>
-    Ethereum↔MVP CHAIN via bridge contracts; L1 fees in ETH; guidance ~10 minutes per direction subject to L1 congestion.
-  </p>
+## Data Availability & Proofs
 
-  <AnimatedHeading as="h2" className="mt-6">Performance Targets & Benchmarks</AnimatedHeading>
-  <p>
-    Targets only; independently verify before quoting. Throughput and latency depend on upstream stack and sequencer
-    parameters.
-  </p>
-</Section>
+Current DA: inherits from the parent rollup stack; settlement to L1 with
+optimistic assumptions. Planned: upgrades to DA and proof systems as released
+upstream.
+
+## Bridging
+
+Ethereum↔MVP CHAIN via bridge contracts; L1 fees in ETH; guidance ~10 minutes per
+direction subject to L1 congestion.
+
+## Performance Targets & Benchmarks
+
+Targets only; independently verify before quoting. Throughput and latency depend
+on upstream stack and sequencer parameters.

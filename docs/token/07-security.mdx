@@ -1,22 +1,7 @@
-<!-- markdownlint-disable MD041 -->
+# Security Considerations
 
-import { Section, AnimatedHeading } from '@site/src/components/ui/Docs'
+- Privileges: admin/owner roles as discovered on Etherscan: **Not Public**; upgraders/timelocks if applicable: **Not Public**.
+- Upgrade risk: **Proxy/Upgradeable (detected)**; pausable/blacklist: **Not Public**.
+- Bridge risk: L1 custody/escrow and L3 minting introduce replay/censorship risks; users should verify bridge contracts.
 
-<Section>
-  <AnimatedHeading as='h1'>Security Considerations</AnimatedHeading>
-  <ul className='list-disc pl-6 mt-2'>
-    <li>
-      Privileges: admin/owner roles as discovered on Etherscan:
-      <strong>Not Public</strong>; upgraders/timelocks if applicable:
-      <strong>Not Public</strong>.
-    </li>
-    <li>
-      Upgrade risk: <strong>Proxy/Upgradeable (detected)</strong>; pausable/blacklist:
-      <strong>Not Public</strong>.
-    </li>
-    <li>
-      Bridge risk: L1 custody/escrow and L3 minting introduce replay/censorship risks; users should
-      verify bridge contracts.
-    </li>
-  </ul>
-</Section>
+![Bridge Flow L1→MVP CHAIN](/figures/fig-bridge.svg)

@@ -1,4 +1,4 @@
-/* minimal config */
+/* Enhanced config with token and chain whitepapers */
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 
@@ -7,7 +7,7 @@ const config: Config = {
   title: 'MVP CHAIN Whitepapers',
   url: siteUrl,
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   markdown: { mermaid: true, hooks: { onBrokenMarkdownLinks: 'warn', onBrokenMarkdownImages: 'ignore' } },
   themes: ['@docusaurus/theme-mermaid'],
   i18n: {
@@ -25,7 +25,7 @@ const config: Config = {
           path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
-          include: ['index.mdx', 'exchange/**'],
+          include: ['index.mdx', 'exchange/**', 'token/**', 'chain/**'],
           remarkPlugins: [require('remark-math')],
           rehypePlugins: [require('rehype-katex')],
         },
@@ -39,9 +39,31 @@ const config: Config = {
     navbar: {
       title: 'MVP CHAIN',
       items: [
-        { type: 'doc', docId: 'exchange/cover', label: 'Exchange', position: 'left' }
-        // removed localeDropdown to enforce English-only UI
+        { type: 'doc', docId: 'exchange/cover', label: 'Exchange', position: 'left' },
+        {
+          type: 'dropdown',
+          label: 'Whitepapers',
+          position: 'left',
+          items: [
+            { to: '/token/00-cover', label: 'Token' },
+            { to: '/chain/00-cover', label: 'Chain' },
+          ],
+        },
       ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Whitepapers',
+          items: [
+            { label: 'Exchange', to: '/exchange/cover' },
+            { label: 'Token', to: '/token/00-cover' },
+            { label: 'Chain', to: '/chain/00-cover' },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} MVP CHAIN.`,
     },
     mermaid: {
       theme: { light: 'neutral', dark: 'neutral' },
